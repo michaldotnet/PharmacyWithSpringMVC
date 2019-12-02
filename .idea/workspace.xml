@@ -3,20 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8f05001e-06f8-489e-a7eb-7553cf410336" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/controller/AddMedicineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/controller/AddMedicineController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/controller/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addMedicine.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addMedicine.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Pharmacy-Spring-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Pharmacy-Spring-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Pharmacy-Spring-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/Pharmacy-Spring-1.0-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/controller/AddMedicineController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/controller/AddMedicineController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/controller/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/controller/MenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/addMedicine.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/addMedicine.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -119,7 +107,7 @@
       <workItem from="1575200113029" duration="14219000" />
       <workItem from="1575280704311" duration="861000" />
       <workItem from="1575282964685" duration="5256000" />
-      <workItem from="1575288303134" duration="13892000" />
+      <workItem from="1575288303134" duration="14840000" />
     </task>
     <servers />
   </component>
