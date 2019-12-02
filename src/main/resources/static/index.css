@@ -1,0 +1,31 @@
+.button {
+    color: #c20dff;
+    font-size: 30px;
+    border: 1px solid #ff2f2c;
+    padding: 5px 10px;
+    text-decoration: none;
+    text-align: center;
+    width: 30%;
+    vertical-alignalign: center;
+    margin: 0 auto;
+    text-decoration: none;
+}
+.buttontext {
+     text-decoration: none;
+     text-align: center;
+    color: #c20dff;
+ }
+#header{
+    color: #669fff;
+    font-size: 50px;
+    border: 1px solid #170aff;
+    text-align: center;
+}
+#outerButtonDiv{
+    horiz-align: center;
+    vertical-align: center;
+    height: 100%;
+}
+body {
+    background-color: #d3bc6b;
+}
