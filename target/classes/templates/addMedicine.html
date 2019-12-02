@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8" >
     <title>Dodawanie leku</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
 <div><p id="header">Dodawanie leku do Bazy Danych</p></div>
+<div id="outerButtonDiv">
 <form method="post">
-    <input type="text" placeholder="Nazwa Leku" name="medicinename" th:field="*{medicineKey.medicineName}">
-    <input type="text" placeholder="Ilość" name="quantity" th:field="*{medicineKey.quantity}">
-    <input type="text" placeholder="Cena" name="price" th:field="*{medicineKey.price}">
-    <input type="text" placeholder="Czy lek jest na recepte?" name="needpre" th:field="*{medicineKey.needPrescription}">
-    <input type="submit" value="Dodaj Lek">
+    <div class="button"><input type="text" placeholder="Nazwa Leku" name="medicineName" size="30"></div>
+    <div class="button"><input type="text" placeholder="Ilość" name="quantity" size="30"></div>
+    <div class="button"><input type="text" placeholder="Cena" name="price" size="30"></div>
+    <div class="button"><input type="text" placeholder="Czy lek jest na recepte?" name="needpre" size="30"></div>
+    <div class="button"><input type="submit" value="Dodaj Lek"></div>
 </form>
+</div>
 </body>
 </html>

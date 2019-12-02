@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Choose Medicine</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div><p id="header">Informacje o leku:</p></div>
+<div id="outputDiv">
+    <div th:text="'Nazwa leku:  '+ ${medicineKey1.medicineName}"></div>
+    <div th:text="'Ilość dostępnych opakowań:  '+ *{medicineKey1.quantity}"></div>
+    <div th:text="'Cena :  ' + *{medicineKey1.price}"></div>
+    <div th:text="'Czy lek jest na recepte?  ' + *{medicineKey1.needPrescription}"></div>
+
+
+
+    <form method="post">
+        <div class="button"><input type="submit" value="Powrót do menu"></div>
+    </form>
+</div>
+</body>
+</html>
+

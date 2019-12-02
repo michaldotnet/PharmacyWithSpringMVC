@@ -23,7 +23,7 @@ public class AddMedicineController {
     @RequestMapping(value = "/addMedicineDialog", method = RequestMethod.POST)
     public String addingMedicine(@ModelAttribute("medicineKey") Medicine medicine) {
         medicineDAO.addMedicines(medicine);
-        return "redirect:menu";
+        return "redirect:";
     }
 
 }

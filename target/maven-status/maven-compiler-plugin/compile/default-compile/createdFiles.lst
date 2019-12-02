@@ -3,4 +3,5 @@ pl\michal\App.class
 pl\michal\dao\Impl\MedicineDAOImpl.class
 pl\michal\controller\MenuController.class
 pl\michal\model\Medicine.class
+pl\michal\controller\ShowInfoAboutMedicineController.class
 pl\michal\dao\IMedicineDAO.class
