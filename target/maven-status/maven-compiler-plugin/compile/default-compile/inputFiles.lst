@@ -2,6 +2,7 @@ D:\JavaProjects\PharmacyProjectWithSpring\src\main\java\pl\michal\controller\Sho
 D:\JavaProjects\PharmacyProjectWithSpring\src\main\java\pl\michal\dao\Impl\MedicineDAOImpl.java
 D:\JavaProjects\PharmacyProjectWithSpring\src\main\java\pl\michal\dao\IMedicineDAO.java
 D:\JavaProjects\PharmacyProjectWithSpring\src\main\java\pl\michal\controller\MenuController.java
+D:\JavaProjects\PharmacyProjectWithSpring\src\main\java\pl\michal\controller\SellMedicineController.java
 D:\JavaProjects\PharmacyProjectWithSpring\src\main\java\pl\michal\model\Medicine.java
 D:\JavaProjects\PharmacyProjectWithSpring\src\main\java\pl\michal\App.java
 D:\JavaProjects\PharmacyProjectWithSpring\src\main\java\pl\michal\controller\AddMedicineController.java

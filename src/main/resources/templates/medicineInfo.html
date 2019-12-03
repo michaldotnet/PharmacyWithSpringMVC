@@ -8,11 +8,14 @@
 <body>
 <div><p id="header">Informacje o leku:</p></div>
 <div id="outputDiv">
-    <div th:text="'Nazwa leku:  '+ ${medicineKey1.medicineName}"></div>
-    <div th:text="'Ilość dostępnych opakowań:  '+ *{medicineKey1.quantity}"></div>
-    <div th:text="'Cena :  ' + *{medicineKey1.price}"></div>
-    <div th:text="'Czy lek jest na recepte?  ' + *{medicineKey1.needPrescription}"></div>
-
+    <div th:text="'Nazwa leku:  '+ ${medicineFromUser.medicineName}"></div>
+    <div th:text="'Ilość dostępnych opakowań:  '+ *{medicineFromUser.quantity}"></div>
+    <div th:text="'Cena :  ' + *{medicineFromUser.price} + 'zł'"></div>
+    <div>
+            <span th:text="'Czy lek jest na recepte:'"/>
+            <span th:if="${medicineFromUser.needPrescription} == true" th:text="Tak"/>
+            <span th:unless="${medicineFromUser.needPrescription} == true" th:text="Nie"/>
+   </div>
 
 
     <form method="post">

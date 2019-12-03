@@ -23,7 +23,7 @@ public class ShowInfoAboutMedicineController {
 
 
     @RequestMapping(value ="/showInfo", method = RequestMethod.GET)
-    public ModelAndView showMedicineInfoPage(){
+    public ModelAndView chooseMedicinePage(){
         return new ModelAndView("showMedicine", "medicineKey", new Medicine());
     }
 
@@ -35,14 +35,14 @@ public class ShowInfoAboutMedicineController {
     }
 
     @RequestMapping(value = "/medicineInfo", method = RequestMethod.GET)
-    public String giveMedicineName1(Model model) {
-        model.addAttribute("medicineKey1", m);
+    public String showInfoAboutMedicine(Model model) {
+        model.addAttribute("medicineFromUser", m);
         System.out.println(m.toString());
         return "medicineInfo";
     }
 
     @RequestMapping(value = "/medicineInfo", method = RequestMethod.POST)
-    public String giveMedicineName2() {
+    public String goBackToMenu() {
         return "/menu";
     }
 
