@@ -12,7 +12,15 @@
     <div class="button"><input type="text" placeholder="Nazwa Leku" name="medicineName" size="30"></div>
     <div class="button"><input type="text" placeholder="Ilość" name="quantity" size="30"></div>
     <div class="button"><input type="text" placeholder="Cena" name="price" size="30"></div>
-    <div class="button"><input type="text" placeholder="Czy lek jest na recepte?" name="needPrescription" size="30"></div>
+    <div class="button"> Czy lek  jest na recepte?
+        <input type="radio" id="tak" name="needPrescription" value="true"
+               checked>
+        <label for="tak">Tak</label>
+
+        <input type="radio" id="nie" name="needPrescription" value="false"
+               checked>
+        <label for="nie">Nie</label>
+    </div>
     <div class="button"><input type="submit" value="Dodaj Lek"></div>
 </form>
 </div>

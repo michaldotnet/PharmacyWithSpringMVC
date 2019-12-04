@@ -1,5 +1,5 @@
 .button {
-    color: #c20dff;
+    color: #0d0d0c;
     font-size: 30px;
     border: 1px solid #ff2f2c;
     padding: 5px 10px;
@@ -13,7 +13,7 @@
 .buttontext {
     text-decoration: none;
     text-align: center;
-    color: #c20dff;
+    color: #0d0d0c;
 }
 #header{
     color: #669fff;
