@@ -1,8 +1,11 @@
 pl\michal\controller\AddMedicineController.class
 pl\michal\controller\SellMedicineController.class
 pl\michal\dao\Impl\MedicineDAOImpl.class
+pl\michal\service\impl\MedicineServiceImpl.class
+pl\michal\configuration\DAOHibernateConfiguration.class
 pl\michal\controller\ShowInfoAboutMedicineController.class
 pl\michal\dao\IMedicineDAO.class
 pl\michal\App.class
 pl\michal\controller\MenuController.class
 pl\michal\model\Medicine.class
+pl\michal\service\IMedicineService.class

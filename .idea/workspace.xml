@@ -2,15 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f05001e-06f8-489e-a7eb-7553cf410336" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/PharmacyProjectWithSpring.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/controller/AddMedicineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/controller/AddMedicineController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/controller/SellMedicineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/controller/SellMedicineController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/controller/ShowInfoAboutMedicineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/controller/ShowInfoAboutMedicineController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/dao/Impl/MedicineDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/dao/Impl/MedicineDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addMedicine.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addMedicine.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/medicineInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/medicineInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Pharmacy-Spring-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Pharmacy-Spring-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Pharmacy-Spring-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/Pharmacy-Spring-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/PharmacyProjectWithSpring.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/controller/AddMedicineController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/controller/AddMedicineController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/controller/SellMedicineController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/controller/SellMedicineController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/medicineInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/medicineInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/controller/ShowInfoAboutMedicineController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/controller/ShowInfoAboutMedicineController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/dao/Impl/MedicineDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/dao/Impl/MedicineDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,10 +47,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="HTML4 File" />
         <option value="CSS File" />
         <option value="HTML File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -65,9 +79,10 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MVCPoczatek/WSZiB-2019.11.29-SpringMVC" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
@@ -78,7 +93,32 @@
       <recent name="D:\JavaProjects\PharmacyProjectWithSpring\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pl.michal.App" />
+      <module name="Pharmacy-Spring" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.michal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="PharmacyProjectWithSpring" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="pl.michal.App" />
@@ -86,18 +126,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
+    <recent_temporary>
       <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
+        <item itemvalue="Application.App" />
       </list>
-    </option>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -119,6 +152,13 @@
       <workItem from="1575382529186" duration="3156000" />
       <workItem from="1575387809273" duration="4497000" />
       <workItem from="1575457050588" duration="4814000" />
+      <workItem from="1575712785864" duration="378000" />
+      <workItem from="1575713500398" duration="1495000" />
+      <workItem from="1575734831494" duration="675000" />
+      <workItem from="1575989370797" duration="450000" />
+      <workItem from="1575991199754" duration="824000" />
+      <workItem from="1576319368139" duration="22000" />
+      <workItem from="1576848038291" duration="10766000" />
     </task>
     <servers />
   </component>
@@ -147,49 +187,57 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1086" y="388" key="#com.intellij.codeInsight.i18n.I18nizeQuickFixDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1575389821336" />
-    <state x="765" y="203" key="#com.intellij.ide.util.MemberChooser" timestamp="1575389058052">
+    <state x="765" y="203" key="#com.intellij.ide.util.MemberChooser" timestamp="1576851259902">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="203" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1575389058052" />
+    <state x="765" y="203" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1576851259902" />
     <state x="758" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1575392263317">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="758" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1575392263317" />
-    <state x="1220" y="278" key="FileChooserDialogImpl" timestamp="1575466800067">
+    <state x="1220" y="278" key="FileChooserDialogImpl" timestamp="1576319388397">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1220" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1575466800067" />
-    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1575470441276">
+    <state x="1220" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1576319388397" />
+    <state width="1877" height="273" key="GridCell.Tab.0.bottom" timestamp="1576859316250">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1575470441276" />
-    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1575470441276">
+    <state width="1877" height="273" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1576859316250" />
+    <state width="1877" height="273" key="GridCell.Tab.0.center" timestamp="1576859316250">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1575470441276" />
-    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1575470441276">
+    <state width="1877" height="273" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1576859316250" />
+    <state width="1877" height="273" key="GridCell.Tab.0.left" timestamp="1576859316250">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1575470441276" />
-    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1575470441276">
+    <state width="1877" height="273" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1576859316250" />
+    <state width="1877" height="273" key="GridCell.Tab.0.right" timestamp="1576859316250">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1575470441276" />
-    <state width="1877" height="275" key="GridCell.Tab.1.bottom" timestamp="1575470441276">
+    <state width="1877" height="273" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1576859316250" />
+    <state width="1877" height="273" key="GridCell.Tab.1.bottom" timestamp="1576859316250">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1575470441276" />
-    <state width="1877" height="275" key="GridCell.Tab.1.center" timestamp="1575470441276">
+    <state width="1877" height="273" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1576859316250" />
+    <state width="1877" height="273" key="GridCell.Tab.1.center" timestamp="1576859316250">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1575470441276" />
-    <state width="1877" height="275" key="GridCell.Tab.1.left" timestamp="1575470441276">
+    <state width="1877" height="273" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1576859316250" />
+    <state width="1877" height="273" key="GridCell.Tab.1.left" timestamp="1576859316250">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1575470441276" />
-    <state width="1877" height="275" key="GridCell.Tab.1.right" timestamp="1575470441276">
+    <state width="1877" height="273" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1576859316250" />
+    <state width="1877" height="273" key="GridCell.Tab.1.right" timestamp="1576859316250">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1575470441276" />
+    <state width="1877" height="273" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1576859316250" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1576319368507">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576319368507" />
+    <state x="342" y="140" key="new project wizard" timestamp="1575713601090">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="342" y="140" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1575713601090" />
   </component>
 </project>

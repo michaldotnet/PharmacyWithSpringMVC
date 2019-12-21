@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import pl.michal.dao.Impl.MedicineDAOImpl;
 import pl.michal.model.Medicine;
+import pl.michal.service.IMedicineService;
 
 @Controller
 public class AddMedicineController {
 
     @Autowired
-    MedicineDAOImpl medicineDAO;
+    IMedicineService medicineService;
+
 
     @RequestMapping(value = "/addMedicineDialog", method = RequestMethod.GET)
     public ModelAndView newMedicinePage() {
@@ -23,7 +25,7 @@ public class AddMedicineController {
 
     @RequestMapping(value = "/addMedicineDialog", method = RequestMethod.POST)
     public String addingMedicine(@ModelAttribute("medicineKey") Medicine medicine) {
-        medicineDAO.addMedicines(medicine);
+        medicineService.addMedicine(medicine);
         return "redirect:";
     }
 

@@ -7,11 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="PharmacyProjectWithSpring" />
+        <module name="Pharmacy-Spring" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Pharmacy-Spring" options="-parameters" />
       <module name="PharmacyProjectWithSpring" options="-parameters" />
     </option>
   </component>

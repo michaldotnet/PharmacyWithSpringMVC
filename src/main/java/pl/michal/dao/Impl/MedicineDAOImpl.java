@@ -11,17 +11,18 @@ import org.springframework.stereotype.Repository;
 import pl.michal.dao.IMedicineDAO;
 import pl.michal.model.Medicine;
 
-import javax.persistence.EntityManagerFactory;
 
 @Repository
 public class MedicineDAOImpl implements IMedicineDAO {
 
+    SessionFactory sessionFactory;
 
-    @Autowired
-    private EntityManagerFactory factory;
+    public MedicineDAOImpl(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
     public void addMedicines(Medicine medicine){
-        Session session = factory.unwrap(SessionFactory.class).openSession();
+        Session session = sessionFactory.openSession();
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
@@ -36,7 +37,7 @@ public class MedicineDAOImpl implements IMedicineDAO {
     }
 
     public Medicine getMedicines(String nameOfMedicine){
-        Session session = factory.unwrap(SessionFactory.class).openSession();
+        Session session = sessionFactory.openSession();
 
         Medicine medicine = (Medicine) session.createQuery("FROM pl.michal.model.Medicine WHERE medicinename = '" + nameOfMedicine + "'").uniqueResult();
 
@@ -44,7 +45,7 @@ public class MedicineDAOImpl implements IMedicineDAO {
         return medicine;
     }
     public void sellMedicine(Medicine medicineForSell, int quantityYouWantToSell){
-        Session session = factory.unwrap(SessionFactory.class).openSession();
+        Session session = sessionFactory.openSession();
         Medicine medicine = medicineForSell;
         medicine.setQuantity(medicine.getQuantity()-quantityYouWantToSell);
 

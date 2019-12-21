@@ -9,23 +9,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import pl.michal.dao.Impl.MedicineDAOImpl;
 import pl.michal.model.Medicine;
+import pl.michal.service.IMedicineService;
 
 @Controller
 public class SellMedicineController {
 
     @Autowired
-    MedicineDAOImpl medicineDAO;
+    IMedicineService medicineService;
 
 
     @RequestMapping(value = "/sellMedicineDialog", method = RequestMethod.GET)
-    public ModelAndView newMedicinePage() {
-        return new ModelAndView("sellMedicine", "sellmedicineKey", new Medicine());
+    public String sellMedicinePage() {
+        return "sellMedicine";
     }
 
     @RequestMapping(value = "/sellMedicineDialog", method = RequestMethod.POST)
-    public String addingMedicine(@ModelAttribute("sellmedicineKey") Medicine medicine, @RequestParam("howMany") int a, @RequestParam("medicineName") String name) {
-        Medicine tempMedicine = medicineDAO.getMedicines(name);
-        medicineDAO.sellMedicine(tempMedicine, a);
+    public String sellMedicine(@RequestParam("howMany") int quantity, @RequestParam("medicineName") String name) {
+        medicineService.sellMedicine(name, quantity);
         return "redirect:";
     }
 }

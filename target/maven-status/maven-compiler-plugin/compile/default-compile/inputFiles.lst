@@ -1,8 +1,11 @@
 D:\JavaProjects\PharmacyProjectWithSpring\src\main\java\pl\michal\controller\ShowInfoAboutMedicineController.java
 D:\JavaProjects\PharmacyProjectWithSpring\src\main\java\pl\michal\dao\Impl\MedicineDAOImpl.java
 D:\JavaProjects\PharmacyProjectWithSpring\src\main\java\pl\michal\dao\IMedicineDAO.java
+D:\JavaProjects\PharmacyProjectWithSpring\src\main\java\pl\michal\service\impl\MedicineServiceImpl.java
 D:\JavaProjects\PharmacyProjectWithSpring\src\main\java\pl\michal\controller\MenuController.java
+D:\JavaProjects\PharmacyProjectWithSpring\src\main\java\pl\michal\configuration\DAOHibernateConfiguration.java
 D:\JavaProjects\PharmacyProjectWithSpring\src\main\java\pl\michal\controller\SellMedicineController.java
 D:\JavaProjects\PharmacyProjectWithSpring\src\main\java\pl\michal\model\Medicine.java
 D:\JavaProjects\PharmacyProjectWithSpring\src\main\java\pl\michal\App.java
+D:\JavaProjects\PharmacyProjectWithSpring\src\main\java\pl\michal\service\IMedicineService.java
 D:\JavaProjects\PharmacyProjectWithSpring\src\main\java\pl\michal\controller\AddMedicineController.java

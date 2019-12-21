@@ -1,34 +1,76 @@
 .button {
-    color: #0d0d0c;
     font-size: 30px;
-    border: 1px solid #ff2f2c;
-    padding: 5px 10px;
+    border: 1px solid white;
+    padding: 10px 15px;
     text-decoration: none;
     text-align: center;
-    width: 30%;
-    vertical-alignalign: center;
+    width: 70%;
+    vertical-align: center;
     margin: 0 auto;
     text-decoration: none;
+
 }
 .buttontext {
     text-decoration: none;
     text-align: center;
-    color: #0d0d0c;
+    color: #00ae99;
 }
 #header{
-    color: #669fff;
+    color: #00ae99;
     font-size: 50px;
-    border: 1px solid #170aff;
+    margin: 0;
+    border: 3px solid white;
+    border-radius: 15px;
     text-align: center;
+    font-family: 'Bad Script';
+    height: 20%;
+}
+#container{
+    height: 70%;
+    width: 60%;
+    padding:0;
+    background-color: black;
+    border-radius: 22px;
+    position: absolute;
+        top: 50%;
+        left: 50%;
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
 }
 #outerButtonDiv{
-    horiz-align: center;
+    margin: auto;
     vertical-align: center;
-    height: 100%;
+    height: 50%;
+    margin: 0;
+}
+
+#flange{
+height: 30%;
 }
 body {
-    background-color: #d3bc6b;
+    background-color: blue;
+    background-image: url('bckgrd.jpg');
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+html{
+height: 100%;
+width: 100%;
+margin: 0;
 }
 input{
     height: 25px;
+}
+
+#table{
+    width: 60%;
+    height: 40%;
+ position: absolute;
+        top: 50%;
+        left: 50%;
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
 }

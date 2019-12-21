@@ -7,43 +7,47 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import pl.michal.dao.IMedicineDAO;
 import pl.michal.dao.Impl.MedicineDAOImpl;
 import pl.michal.model.Medicine;
+import pl.michal.service.IMedicineService;
 
 @Controller
+@SessionAttributes("medicineFromUser")
 public class ShowInfoAboutMedicineController {
 
-
     @Autowired
-    MedicineDAOImpl medicineDAO;
-
-    Medicine m = new Medicine();
+    IMedicineService medicineService;
 
 
     @RequestMapping(value ="/showInfo", method = RequestMethod.GET)
-    public ModelAndView chooseMedicinePage(){
-        return new ModelAndView("showMedicine", "medicineKey", new Medicine());
+    public String chooseMedicinePage(Model model){
+        model.addAttribute("medicineKey", new Medicine());
+        return "showMedicine";
     }
+    
 
     @RequestMapping(value = "/showInfo", method = RequestMethod.POST)
-    public String giveMedicineName(@ModelAttribute("medicineKey") Medicine medicine) {
-        medicine = medicineDAO.getMedicines(medicine.getMedicineName());
-        m = medicine;
-        return ("redirect:/medicineInfo");
+    public String giveMedicineName(@ModelAttribute("medicineKey") Medicine medicine, final RedirectAttributes redirectAttributes) {
+        Medicine medicineFromDB = medicineService.getMedicines(medicine.getMedicineName());
+
+        redirectAttributes.addFlashAttribute("medicineFromUser", medicineFromDB);
+        return "redirect:/medicineInfo";
     }
 
     @RequestMapping(value = "/medicineInfo", method = RequestMethod.GET)
-    public String showInfoAboutMedicine(Model model) {
-        model.addAttribute("medicineFromUser", m);
-        System.out.println(m.toString());
+    public String showInfoAboutMedicine(@ModelAttribute("medicineFromUser") Medicine medicine) {
+        System.out.println(medicine.toString());
         return "medicineInfo";
     }
 
     @RequestMapping(value = "/medicineInfo", method = RequestMethod.POST)
     public String goBackToMenu() {
-        return "/menu";
+        return "redirect:/";
     }
 
 
