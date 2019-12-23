@@ -1,0 +1,59 @@
+.button {
+    font-size: 30px;
+    border: 1px solid white;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-align: center;
+    width: 70%;
+    vertical-align: center;
+    margin: 0 auto;
+    text-decoration: none;
+
+}
+.buttontext {
+    text-decoration: none;
+    text-align: center;
+    color: #00ae99;
+    border-radius: 25px;
+    border: 2px solid #00ae99;
+    height: 40px;
+}
+.button-box:hover {
+    background-color: #00ae99;
+    color: white;
+}
+.button-box {
+    border-radius: 25px;
+    border: 2px solid white;
+    padding: 5px 10px;
+    cursor: pointer;
+    -webkit-transition: 1s; /* Safari prior 6.1 */
+    transition: 1s;
+    display: block;
+    margin: 10px auto;
+    width: 200px;
+    height: 50px;
+}
+.texts{
+    text-decoration: none;
+    text-align: center;
+    color: #00ae99;
+    height: 40px;
+    font-size: 30px;
+}
+#error-message {
+    font-size: 22px;
+    text-align: center;
+    min-height: 40px;
+    color: red;
+    padding: 30px;
+}
+
+#centerDIV{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}

@@ -4,24 +4,28 @@
     <meta charset="UTF-8">
     <title>Choose Medicine</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="forms.css">
 </head>
+
 <body>
-<div><p id="header">Informacje o leku:</p></div>
-<div>
-    <div class="button" th:text="'Nazwa leku:  '+ ${medicineFromUser.medicineName}"></div>
-    <div class="button"th:text="'Ilość dostępnych opakowań:  '+ *{medicineFromUser.quantity}"></div>
-    <div class="button"th:text="'Cena :  ' + *{medicineFromUser.price} + 'zł'"></div>
-    <div class="button">
+<div id="container">
+    <div><p id="header">Informacje o leku:</p></div>
+    <div id="centerDIV">
+        <div class="texts"  th:text="'Nazwa leku:  '+ ${medicineFromUser.medicineName}"></div>
+        <div class="texts" th:text="'Ilość dostępnych opakowań:  '+ *{medicineFromUser.quantity}"></div>
+        <div class="texts" th:text="'Cena :  ' + *{medicineFromUser.price} + 'zł'"></div>
+        <div class="texts">
             <span th:text="'Czy lek jest na recepte:'"/>
             <span th:if="${medicineFromUser.needPrescription} == true" th:text="Tak"/>
             <span th:unless="${medicineFromUser.needPrescription} == true" th:text="Nie"/>
-   </div>
+        </div>
 
-
-    <form method="post">
-        <div class="button"><input type="submit" value="Powrót do menu"></div>
-    </form>
+        <form method="post">
+            <div><input type="submit" class="button-box" value="Powrót do menu"></div>
+        </form>
+    </div>
 </div>
 </body>
 </html>
+
 

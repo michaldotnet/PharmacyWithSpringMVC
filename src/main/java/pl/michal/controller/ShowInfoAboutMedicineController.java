@@ -27,13 +27,19 @@ public class ShowInfoAboutMedicineController {
     @RequestMapping(value ="/showInfo", method = RequestMethod.GET)
     public String chooseMedicinePage(Model model){
         model.addAttribute("medicineKey", new Medicine());
+        model.addAttribute("errorMessage", "");
         return "showMedicine";
     }
     
 
     @RequestMapping(value = "/showInfo", method = RequestMethod.POST)
-    public String giveMedicineName(@ModelAttribute("medicineKey") Medicine medicine, final RedirectAttributes redirectAttributes) {
+    public String giveMedicineName(@ModelAttribute("medicineKey") Medicine medicine, final RedirectAttributes redirectAttributes, Model model) {
         Medicine medicineFromDB = medicineService.getMedicines(medicine.getMedicineName());
+        if(medicineFromDB==null){
+            model.addAttribute("medicineKey", new Medicine());
+            model.addAttribute("errorMessage", "Nie ma takiego leku w Bazie Danych");
+            return "showMedicine";
+        }
 
         redirectAttributes.addFlashAttribute("medicineFromUser", medicineFromDB);
         return "redirect:/medicineInfo";

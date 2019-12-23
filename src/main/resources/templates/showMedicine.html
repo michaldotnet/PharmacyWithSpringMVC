@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <title>Choose Medicine</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="forms.css">
 </head>
 <body>
-<div><p id="header">Podaj nazwę leku, o którym chcesz wyświetlić informację</p></div>
-<div id="outerButtonDiv">
-    <form method="post">
-        <div class="button"><input type="text" placeholder="Nazwa Leku" name="medicineName" size="30" th:field="*{medicineKey.medicineName}"></div>
-        <div class="button"><input type="submit" value="Pokaż informacje"></div>
-    </form>
+<div id="container">
+    <div><p id="header">Podaj nazwę leku, o którym chcesz wyświetlić informację</p></div>
+    <div id="outerButtonDiv">
+        <div id="table">
+        <form method="post">
+            <div class="button"><input type="text" class="buttontext" placeholder="Nazwa Leku" name="medicineName" size="30" th:field="*{medicineKey.medicineName}"></div>
+            <div class="button"><input type="submit" class="button-box" value="Pokaż informacje"></div>
+        </form>
+        </div>
+    </div>
+    <div th:text="${errorMessage}" id="error-message"></div>
 </div>
 
 </body>

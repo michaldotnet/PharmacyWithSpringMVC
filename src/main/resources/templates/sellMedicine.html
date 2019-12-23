@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <title>Sell Medicine</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="forms.css">
 </head>
 <body>
-<div><p id="header">Sprzedawanie leku</p></div>
-<div id="outerButtonDiv">
-    <form method="post">
-        <div class="button"><input type="text" placeholder="Nazwa leku" name="medicineName" size="30"></div>
-        <div class="button"><input type="number" placeholder="Ilość opakowań, które chcesz sprzedać" name="howMany" size="40"></div>
-        <div class="button"><input type="submit" value="Sprzedaj Lek"></div>
-    </form>
+<div id="container">
+    <div><p id="header">Sprzedawanie leku</p></div>
+    <div id="outerButtonDiv">
+        <div th:text="${errorMessage}" id="error-message"></div>
+        <div id="table">
+        <form method="post">
+            <div class="button"><input type="text" class="buttontext" placeholder="Nazwa leku" name="medicineName" size="30"></div>
+            <div class="button"><input type="number" class="buttontext" style="width: 300px;" placeholder="Ilość opakowań, które chcesz sprzedać" name="howMany" size="1000"></div>
+            <div class="button"><input type="submit" class="button-box" value="Sprzedaj Lek"></div>
+        </form>
+        </div>
+    </div>
 </div>
 </body>
 </html>

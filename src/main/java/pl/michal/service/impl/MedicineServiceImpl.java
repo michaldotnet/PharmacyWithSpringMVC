@@ -1,5 +1,6 @@
 package pl.michal.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import pl.michal.dao.IMedicineDAO;
 import pl.michal.model.Medicine;
 import pl.michal.service.IMedicineService;
@@ -16,17 +17,21 @@ public class MedicineServiceImpl implements IMedicineService {
         this.medicineDAO.addMedicines(medicine);
     }
 
-    public void sellMedicine(String medicineName, int quantityYouWantToSell) {
+    public boolean sellMedicine(String medicineName, int quantityYouWantToSell) {
 
         Medicine medicineFromDB = medicineDAO.getMedicines(medicineName);
         if (medicineFromDB == null) {
             System.out.println("Nie ma takiego lekarstwa w Bazie danych");
+            return false;
         }else if (medicineFromDB.getQuantity() <= 0) {
             System.out.println("Lekarstwo się skończyło, musisz poczekać na nową dostawę tego leku");
+            return false;
         }else if(medicineFromDB.getQuantity() < quantityYouWantToSell) {
             System.out.println("Nie ma aż tylu opakowań lekarstwa, zostały jedynie " + medicineFromDB.getQuantity() + " opakowania");
+            return false;
         }else {
             medicineDAO.sellMedicine(medicineFromDB, quantityYouWantToSell);
+            return true;
         }
     }
 

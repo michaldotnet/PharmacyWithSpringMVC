@@ -4,25 +4,36 @@
     <meta charset="UTF-8" >
     <title>Dodawanie leku</title>
     <link rel="stylesheet" href="index.css">
-</head>
-<body>
-<div><p id="header">Dodawanie leku do Bazy Danych</p></div>
-<div id="outerButtonDiv">
-<form method="post">
-    <div class="button"><input type="text" placeholder="Nazwa Leku" name="medicineName" size="30"></div>
-    <div class="button"><input type="text" placeholder="Ilość" name="quantity" size="30"></div>
-    <div class="button"><input type="text" placeholder="Cena" name="price" size="30"></div>
-    <div class="button"> Czy lek  jest na recepte?
-        <input type="radio" id="tak" name="needPrescription" value="true"
-               checked>
-        <label for="tak">Tak</label>
+    <link rel="stylesheet" href="forms.css">
+    <style>
 
-        <input type="radio" id="nie" name="needPrescription" value="false"
-               checked>
-        <label for="nie">Nie</label>
+    </style>
+</head>
+
+<body>
+<div id="container">
+    <div><p id="header">Dodawanie leku do Bazy Danych</p></div>
+    <div id="outerButtonDiv">
+        <div th:text="${errorMessage}" id="error-message"></div>
+    <div id="table">
+        <form method="post">
+            <div class="button"><input type="text"   class="buttontext" placeholder="Nazwa Leku" name="medicineName" size="30"></div>
+            <div class="button"><input type="number" class="buttontext" placeholder="Ilość" name="quantity" size="30"></div>
+            <div class="button"><input type="number" class="buttontext" placeholder="Cena" name="price" size="30"></div>
+            <div class="button"><span class="texts"> Czy lek  jest na recepte?
+                <input type= "radio" id="tak" name="needPrescription" value="true"
+                       checked>
+                <label for="tak">Tak</label>
+
+                <input type="radio" id="nie" name="needPrescription" value="false"
+                       checked>
+                <label for="nie">Nie</label>
+            </span>
+            </div>
+            <div class="button"><input type="submit" class="button-box" value="Dodaj Lek"></div>
+    </form>
     </div>
-    <div class="button"><input type="submit" value="Dodaj Lek"></div>
-</form>
+    </div>
 </div>
 </body>
 </html>
