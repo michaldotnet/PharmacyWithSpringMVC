@@ -11,6 +11,9 @@ import org.springframework.stereotype.Repository;
 import pl.michal.dao.IMedicineDAO;
 import pl.michal.model.Medicine;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Repository
 public class MedicineDAOImpl implements IMedicineDAO {
@@ -20,6 +23,8 @@ public class MedicineDAOImpl implements IMedicineDAO {
     public MedicineDAOImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
+
+
 
     public void addMedicines(Medicine medicine){
         Session session = sessionFactory.openSession();
@@ -36,6 +41,7 @@ public class MedicineDAOImpl implements IMedicineDAO {
         }
     }
 
+
     public Medicine getMedicines(String nameOfMedicine){
         Session session = sessionFactory.openSession();
 
@@ -44,6 +50,20 @@ public class MedicineDAOImpl implements IMedicineDAO {
         session.close();
         return medicine;
     }
+
+
+    public List<Medicine> getAllMedicinesFromDB(){
+        Session session = sessionFactory.openSession();
+
+        List<Medicine> allMedicinesFromDB = new ArrayList<>();
+        allMedicinesFromDB = session.createSQLQuery("SELECT * FROM tlekarstwo").list();
+
+        session.close();
+
+        return allMedicinesFromDB;
+    }
+
+
     public void sellMedicine(Medicine medicineForSell, int quantityYouWantToSell){
         Session session = sessionFactory.openSession();
         Medicine medicine = medicineForSell;
@@ -61,5 +81,4 @@ public class MedicineDAOImpl implements IMedicineDAO {
             session.close();
         }
     }
-
 }

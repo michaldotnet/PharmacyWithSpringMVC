@@ -8,7 +8,14 @@
     vertical-align: center;
     margin: 0 auto;
     text-decoration: none;
+      cursor: pointer;
+        -webkit-transition: 2s; /* Safari prior 6.1 */
+        transition: 2s;
 
+}
+.button:hover {
+    background-color: #00ae99;
+    color: white;
 }
 .buttontext {
     text-decoration: none;

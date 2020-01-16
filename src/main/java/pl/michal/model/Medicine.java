@@ -1,6 +1,7 @@
 package pl.michal.model;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name="tlekarstwo")
@@ -67,5 +68,22 @@ public class Medicine {
                 "\nCena = " + price +
                 "zł \nCzy lek jest na recepte? " + needPrescription +
                 '\n';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Medicine medicine = (Medicine) o;
+        return id == medicine.id &&
+                quantity == medicine.quantity &&
+                Double.compare(medicine.price, price) == 0 &&
+                needPrescription == medicine.needPrescription &&
+                medicineName.equals(medicine.medicineName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, medicineName, quantity, price, needPrescription);
     }
 }

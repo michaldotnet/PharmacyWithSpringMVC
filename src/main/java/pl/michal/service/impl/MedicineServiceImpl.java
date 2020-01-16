@@ -5,6 +5,8 @@ import pl.michal.dao.IMedicineDAO;
 import pl.michal.model.Medicine;
 import pl.michal.service.IMedicineService;
 
+import java.util.List;
+
 public class MedicineServiceImpl implements IMedicineService {
 
     IMedicineDAO medicineDAO;
@@ -36,7 +38,10 @@ public class MedicineServiceImpl implements IMedicineService {
     }
 
     public Medicine getMedicines(String nameOfMedicine){
-        Medicine medicine = medicineDAO.getMedicines(nameOfMedicine);
-        return medicine;
+        return medicineDAO.getMedicines(nameOfMedicine);
+    }
+
+    public List<Medicine> getAllMedicinesFromDB(){
+        return medicineDAO.getAllMedicinesFromDB();
     }
 }
