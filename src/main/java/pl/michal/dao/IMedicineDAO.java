@@ -10,5 +10,5 @@ public interface IMedicineDAO {
     Medicine getMedicines(String nameOfMedicine);
     List<Medicine> getAllMedicinesFromDB();
     void sellMedicine(Medicine medicineForSell, int quantityYouWantToSell);
-
+    void updateMedicine(Medicine medicineForUpdate);
 }

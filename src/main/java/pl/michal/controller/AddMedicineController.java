@@ -28,14 +28,17 @@ public class AddMedicineController {
 
     @RequestMapping(value = "/addMedicineDialog", method = RequestMethod.POST)
     public String addingMedicine(@ModelAttribute("medicineKey") Medicine medicine, Model model) {
-            if(medicine.getMedicineName()==""){
-                model.addAttribute("errorMessage", "Musisz podać nazwę leku");
-                model.addAttribute("medicineKey", new Medicine());
-                return ("addMedicine");
-            }else if(!checkIfMedicineExistInDB(medicine)){
-                medicineService.addMedicine(medicine);
-                return "redirect:";
-            }
+          if (medicine.getMedicineName() == "" || medicine.getQuantity() == 0 || medicine.getPrice() == 0) {
+              model.addAttribute("errorMessage", "Cena oraz ilosc leku nie moga byc rowne 0, nazwa leku nie moze byc pusta");
+              model.addAttribute("medicineKey", new Medicine());
+              return ("addMedicine");
+          } else if (!checkIfMedicineExistInDB(medicine)) {
+              medicineService.addMedicine(medicine);
+              return "redirect:";
+          }else{
+
+             // medicineService.updateMedicine();
+          }
 
 
             //tutaj trzeba obsluzyc sytuacje w ktorej uzytkownik dodaje lek do bazy danych, ktore juz w niej jest, wiec tylko przychodzi dostawa

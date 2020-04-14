@@ -44,4 +44,9 @@ public class MedicineServiceImpl implements IMedicineService {
     public List<Medicine> getAllMedicinesFromDB(){
         return medicineDAO.getAllMedicinesFromDB();
     }
+
+    @Override
+    public void updateMedicine(String medicineName) {
+        Medicine medicineFromDb = medicineDAO.getMedicines(medicineName);
+    }
 }

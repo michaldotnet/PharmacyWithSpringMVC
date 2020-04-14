@@ -9,4 +9,5 @@ public interface IMedicineService {
         boolean sellMedicine(String medicineName, int quantityYouWantToSell);
         Medicine getMedicines(String nameOfMedicine);
         List<Medicine> getAllMedicinesFromDB();
+        void updateMedicine(String medicineName);
 }

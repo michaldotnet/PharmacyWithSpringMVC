@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import pl.michal.dao.IMedicineDAO;
 import pl.michal.model.Medicine;
 
+import javax.xml.crypto.dsig.TransformService;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -78,6 +79,23 @@ public class MedicineDAOImpl implements IMedicineDAO {
         } catch (HibernateException e) {
             if(tx != null) tx.rollback();
         } finally {
+            session.close();
+        }
+    }
+
+    public void updateMedicine(Medicine medicine){
+        Session session = sessionFactory.openSession();
+
+
+        Transaction tx = null;
+        try{
+            tx = session.beginTransaction();
+            session.update(medicine);
+            tx.commit();
+        } catch(HibernateException e){
+            if(tx != null) tx.rollback();
+        }
+        finally {
             session.close();
         }
     }

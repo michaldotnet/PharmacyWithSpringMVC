@@ -17,9 +17,9 @@
         <div th:text="${errorMessage}" id="error-message"></div>
     <div id="table">
         <form method="post">
-            <div class="button"><input type="text"   class="buttontext" placeholder="Nazwa Leku" name="medicineName" size="30"></div>
-            <div class="button"><input type="number" class="buttontext" placeholder="Ilość" name="quantity" size="30"></div>
-            <div class="button"><input type="number" step="0.01" class="buttontext" placeholder="Cena" name="price" size="30"></div>
+            <div class="button"><input type="text"   class="buttontext" placeholder="Nazwa Leku" name="medicineName" size="30" required></div>
+            <div class="button"><input type="number" class="buttontext" placeholder="Ilość" name="quantity" size="30" required></div>
+            <div class="button"><input type="number" step="0.01" class="buttontext" placeholder="Cena" name="price" size="30" required></div>
             <span class="texts"> <div class="button"> Czy lek  jest na recepte?
                 <input type= "radio" id="tak" name="needPrescription" value="true"
                        checked>

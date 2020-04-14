@@ -3,30 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="8f05001e-06f8-489e-a7eb-7553cf410336" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/controller/AddMedicineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/controller/AddMedicineController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/dao/IMedicineDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/dao/IMedicineDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/dao/Impl/MedicineDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/dao/Impl/MedicineDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/model/Medicine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/model/Medicine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/service/IMedicineService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/service/IMedicineService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/service/impl/MedicineServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/service/impl/MedicineServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/forms.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/forms.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addMedicine.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addMedicine.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/dao/IMedicineDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/dao/IMedicineDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Pharmacy-Spring-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Pharmacy-Spring-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Pharmacy-Spring-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/Pharmacy-Spring-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/controller/AddMedicineController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/controller/AddMedicineController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/dao/Impl/MedicineDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/dao/Impl/MedicineDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/model/Medicine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/model/Medicine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/service/IMedicineService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/service/IMedicineService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/service/impl/MedicineServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/service/impl/MedicineServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/forms.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/forms.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/addMedicine.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/addMedicine.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +231,12 @@
       <workItem from="1578737101230" duration="6821000" />
       <workItem from="1578762398338" duration="1835000" />
       <workItem from="1578823472000" duration="11375000" />
-      <workItem from="1579200242075" duration="210000" />
+      <workItem from="1579200242075" duration="320000" />
+      <workItem from="1579684597877" duration="69000" />
+      <workItem from="1580297599459" duration="1186000" />
+      <workItem from="1580387573167" duration="15000" />
+      <workItem from="1581094007454" duration="606000" />
+      <workItem from="1586349024498" duration="3408000" />
     </task>
     <servers />
   </component>
@@ -269,10 +265,6 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578830317305" />
-    <state x="1086" y="388" key="#com.intellij.codeInsight.i18n.I18nizeQuickFixDialog" timestamp="1575389821336">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1086" y="388" key="#com.intellij.codeInsight.i18n.I18nizeQuickFixDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1575389821336" />
     <state x="206" y="160" width="921" height="847" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1578831908781">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -281,57 +273,49 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="720" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1578147412457" />
-    <state x="765" y="203" key="#com.intellij.ide.util.MemberChooser" timestamp="1576851259902">
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1586352138114">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="203" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1576851259902" />
-    <state x="758" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1575392263317">
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1586352138114" />
+    <state x="1220" y="278" key="FileChooserDialogImpl" timestamp="1580387585144">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="758" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1575392263317" />
-    <state x="1220" y="278" key="FileChooserDialogImpl" timestamp="1578741465252">
+    <state x="1220" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1580387585144" />
+    <state width="1877" height="267" key="GridCell.Tab.0.bottom" timestamp="1586352439806">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1220" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1578741465252" />
-    <state width="1877" height="270" key="GridCell.Tab.0.bottom" timestamp="1579200290957">
+    <state width="1877" height="267" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586352439806" />
+    <state width="1877" height="267" key="GridCell.Tab.0.center" timestamp="1586352439806">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="270" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579200290957" />
-    <state width="1877" height="270" key="GridCell.Tab.0.center" timestamp="1579200290957">
+    <state width="1877" height="267" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586352439806" />
+    <state width="1877" height="267" key="GridCell.Tab.0.left" timestamp="1586352439806">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="270" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579200290957" />
-    <state width="1877" height="270" key="GridCell.Tab.0.left" timestamp="1579200290956">
+    <state width="1877" height="267" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586352439806" />
+    <state width="1877" height="267" key="GridCell.Tab.0.right" timestamp="1586352439806">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="270" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579200290956" />
-    <state width="1877" height="270" key="GridCell.Tab.0.right" timestamp="1579200290957">
+    <state width="1877" height="267" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586352439806" />
+    <state width="1877" height="267" key="GridCell.Tab.1.bottom" timestamp="1586352439806">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="270" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579200290957" />
-    <state width="1877" height="270" key="GridCell.Tab.1.bottom" timestamp="1578831408716">
+    <state width="1877" height="267" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586352439806" />
+    <state width="1877" height="267" key="GridCell.Tab.1.center" timestamp="1586352439806">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="270" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578831408716" />
-    <state width="1877" height="270" key="GridCell.Tab.1.center" timestamp="1578831408716">
+    <state width="1877" height="267" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586352439806" />
+    <state width="1877" height="267" key="GridCell.Tab.1.left" timestamp="1586352439806">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="270" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578831408716" />
-    <state width="1877" height="270" key="GridCell.Tab.1.left" timestamp="1578831408716">
+    <state width="1877" height="267" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586352439806" />
+    <state width="1877" height="267" key="GridCell.Tab.1.right" timestamp="1586352439806">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="270" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578831408716" />
-    <state width="1877" height="270" key="GridCell.Tab.1.right" timestamp="1578831408716">
+    <state width="1877" height="267" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586352439806" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1580387572991">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="270" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578831408716" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1578147394423">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578147394423" />
-    <state x="342" y="140" key="new project wizard" timestamp="1575713601090">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="342" y="140" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1575713601090" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580387572991" />
   </component>
 </project>
