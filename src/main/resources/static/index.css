@@ -62,6 +62,19 @@ input{
     color: white;
     text-align:center;
 }
+#backToMenu{
+
+
+     position: absolute;
+     top: 85%;
+     left: 87%;
+     -moz-transform: translateX(-50%) translateY(-50%);
+     -webkit-transform: translateX(-50%) translateY(-50%);
+     transform: translateX(-50%) translateY(-50%);
+  width: 10%;
+  border: 3px solid white;
+  padding: 10px;
+}
 
 
 

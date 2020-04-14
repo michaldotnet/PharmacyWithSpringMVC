@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" >
-    <title>Dodawanie leku</title>
+    <title>Zmiana informacji o leku</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="forms.css">
     <style>
@@ -15,12 +15,11 @@
     <div><p id="header">Dodawanie leku do Bazy Danych</p></div>
     <div id="outerButtonDiv">
         <div th:text="${errorMessage}" id="error-message"></div>
-    <div id="table">
-        <form method="post">
-            <div class="button"><input type="text"   class="buttontext" placeholder="Nazwa Leku" name="medicineName" size="30" required></div>
-            <div class="button"><input type="number" class="buttontext" placeholder="Ilość" name="quantity" size="30" required></div>
-            <div class="button"><input type="number" step="0.01" class="buttontext" placeholder="Cena" name="price" size="30" required></div>
-            <span class="texts"> <div class="button"> Czy lek  jest na recepte?
+        <div id="table">
+            <form method="post">
+                <div class="button"><input type="text"   class="buttontext" placeholder="Nazwa Leku" name="medicineName" size="30" required></div>
+                <div class="button"><input type="number" step="0.01" class="buttontext" placeholder="Nowa Cena" name="price" size="30" required></div>
+                <span class="texts"> <div class="button"> Czy lek  jest na recepte?
                 <input type= "radio" id="tak" name="needPrescription" value="true"
                        checked>
                 <label for="tak">Tak</label>
@@ -31,12 +30,10 @@
 
             </div>
             </span>
-            <div class="button"><input type="submit" class="button-box" value="Dodaj Lek"></div>
-    </form>
+                <div class="button"><input type="submit" class="button-box" value="Zmien informacje o leku"></div>
+            </form>
+        </div>
     </div>
-    </div>
-    <a href="/" class="texts" ><div id="backToMenu">Menu</div></a>
-    <div style="clear:both;"> </div>
 </div>
 </body>
 </html>

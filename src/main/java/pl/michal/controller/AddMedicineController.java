@@ -15,9 +15,13 @@ import pl.michal.service.IMedicineService;
 @Controller
 public class AddMedicineController {
 
-    @Autowired
+
     IMedicineService medicineService;
 
+    @Autowired
+    public AddMedicineController(IMedicineService medicineService) {
+        this.medicineService = medicineService;
+    }
 
     @RequestMapping(value = "/addMedicineDialog", method = RequestMethod.GET)
     public String newMedicinePage(Model model) {

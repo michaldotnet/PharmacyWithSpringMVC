@@ -13,12 +13,14 @@
         <div th:text="${errorMessage}" id="error-message"></div>
         <div id="table">
         <form method="post">
-            <div class="button"><input type="text" class="buttontext" placeholder="Nazwa leku" name="medicineName" size="30"></div>
+            <div class="button"><input type="text" class="buttontext" placeholder="Nazwa leku" name="medicineName" size="30" required></div>
             <div class="button"><input type="number" class="buttontext" style="width: 300px;" placeholder="Ilość opakowań, które chcesz sprzedać" name="howMany" size="1000"></div>
             <div class="button"><input type="submit" class="button-box" value="Sprzedaj Lek"></div>
         </form>
         </div>
     </div>
+    <a href="/" class="texts" ><div id="backToMenu">Menu</div></a>
+    <div style="clear:both;"> </div>
 </div>
 </body>
 </html>
