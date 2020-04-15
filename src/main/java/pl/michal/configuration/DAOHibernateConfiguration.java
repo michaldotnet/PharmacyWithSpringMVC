@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import pl.michal.dao.IMedicineDAO;
 import pl.michal.dao.Impl.MedicineDAOImpl;
+import pl.michal.dao.UserDao;
 import pl.michal.service.IMedicineService;
 import pl.michal.service.impl.MedicineServiceImpl;
 
@@ -26,4 +27,11 @@ public class DAOHibernateConfiguration {
         return new MedicineServiceImpl(medicineDAO);
 
     }
+
+  /*  @Bean
+    public UserDao userDao(SessionFactory hibernateSessionFactory){
+        return new
+    }
+
+   */
 }
