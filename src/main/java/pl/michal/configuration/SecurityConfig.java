@@ -36,12 +36,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.headers().disable();
         http.authorizeRequests()
                 .antMatchers("/").authenticated()
-                .antMatchers("/addMedicineDialog").hasAuthority("ROLE_ADMIN")
-                .antMatchers("/changeMedicineInfo").hasAuthority("ROLE_ADMIN")
-                .antMatchers("/sellMedicineDialog").hasAuthority("ROLE_ADMIN")
-                .antMatchers("/showInfo").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
-                //.antMatchers("/").permitAll()
+                .antMatchers("/admin/*").hasAuthority("ROLE_ADMIN")
+                .antMatchers("/changeMedicineInfo").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
+                .antMatchers("/addMedicineDialog").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
+                .antMatchers("/sellMedicineDialog").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
+                .antMatchers("/showInfo").permitAll()
                 .and()
                 .formLogin().defaultSuccessUrl("/");
+
     }
 }

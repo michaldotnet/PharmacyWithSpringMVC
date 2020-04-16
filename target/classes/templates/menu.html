@@ -10,32 +10,33 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
 
-     var numer = Math.floor(Math.random()*4)+1;
-     var timer1 = 0;
-     var timer2 = 0;
+        var licznik1 = 0;
+        var licznik2 = 0;
+        var numer = Math.floor(Math.random()*4)+1;
 
-     function schowaj()
+
+     function znikanie()
      {
          $("#flan3").fadeOut(700);
      }
 
-    function zmienslajd()
+    function zamianaZdjecia()
     {
     $(document).ready(function() {
     $("#my_audio").get(0).play();
     });
     numer++;
     if(numer > 4) numer = 1;
-    var plik = "<img src=\"" + numer + ".png\" />";
-    document.getElementById("flan3").innerHTML =  plik;
+    var plikZeZdjeciem = "<img src=\"" + numer + ".png\" />";
+    document.getElementById("flan3").innerHTML =  plikZeZdjeciem;
     $("#flan3").fadeIn(700);
 
-     timer1=setTimeout("zmienslajd()", 5000);
-     timer2=setTimeout("schowaj()", 4300);
+     licznik1=setTimeout("zamianaZdjecia()", 5000);
+     licznik2=setTimeout("znikanie()", 4300);
     }
     </script>
 </head>
-<body onload="zmienslajd()">
+<body onload="zamianaZdjecia()">
 
 <div id="container">
         <div><p id="header">Witaj w Aptece, co chciałbyś zrobić?</p></div>
@@ -48,10 +49,11 @@
             </div>
         </div>
         <div id="flange">
-            <div class="flan" id="flan1">&nbsp;</div>
-            <div class="flan" id="flan2">&nbsp;</div>
             <div id="flan3" style="width:33%; float:left; text-align:center;"></div>
-                <div style="clear:both;"> </div>
+            <div style="clear:both;"> </div>
+            <div class="flan" id="flan1">&nbsp;</div>
+            <div class="flan" id="flan2" style="width:33%; float:left; text-align:center;"><a href="/logout" class="texts" ><div id="backToMenu">Wyloguj</div></a>
+                <div style="clear:both;"> </div>&nbsp;</div>
         </div>
 
 </div>
