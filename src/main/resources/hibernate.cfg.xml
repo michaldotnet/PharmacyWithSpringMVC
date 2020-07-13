@@ -22,5 +22,9 @@
         <!-- mappings -->
         <mapping class="pl.michal.model.Medicine"/>
         <mapping class="pl.michal.model.User"/>
+        <mapping class="pl.michal.model.MedicineBatch"/>
+        <mapping class="pl.michal.model.MedicineList"/>
+        <mapping class="pl.michal.model.Cart"/>
+        <mapping class="pl.michal.model.CartElement"/>
     </session-factory>
 </hibernate-configuration>

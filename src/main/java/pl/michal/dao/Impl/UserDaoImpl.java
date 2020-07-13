@@ -6,10 +6,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 import pl.michal.dao.UserDao;
-import pl.michal.model.Medicine;
 import pl.michal.model.User;
-
-import java.util.Optional;
 
 @Repository
 public class UserDaoImpl implements UserDao {

@@ -5,13 +5,10 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import pl.michal.dao.IMedicineDAO;
 import pl.michal.model.Medicine;
 
-import javax.xml.crypto.dsig.TransformService;
 import java.util.ArrayList;
 import java.util.List;
 

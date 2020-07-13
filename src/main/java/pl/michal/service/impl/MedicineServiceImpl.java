@@ -1,6 +1,5 @@
 package pl.michal.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import pl.michal.dao.IMedicineDAO;
 import pl.michal.model.Medicine;
 import pl.michal.service.IMedicineService;
@@ -50,3 +49,4 @@ public class MedicineServiceImpl implements IMedicineService {
         Medicine medicineFromDb = medicineDAO.getMedicines(medicineName);
     }
 }
+

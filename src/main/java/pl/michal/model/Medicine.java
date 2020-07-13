@@ -1,7 +1,5 @@
 package pl.michal.model;
 
-import org.springframework.boot.autoconfigure.web.ResourceProperties;
-
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -10,7 +8,7 @@ import java.util.Objects;
 public class Medicine {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue
     @Column(name="id")
     private int id;
     @Column(name="medicinename")
