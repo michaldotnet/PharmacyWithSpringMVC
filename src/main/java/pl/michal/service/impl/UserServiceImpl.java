@@ -23,8 +23,7 @@ public class UserServiceImpl implements IUserService {
 
     public void addUser(User user){
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setRole("ROLE_USER");
+        user.setRole(user.getRole());
         userDao.addUserToDataBase(user);
-
     }
 }

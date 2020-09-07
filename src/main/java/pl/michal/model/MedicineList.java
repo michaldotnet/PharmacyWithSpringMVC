@@ -5,12 +5,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="ListaLekarstw")
+@Table(name="SpisLekarstw")
 public class MedicineList {
 
     @Id
@@ -26,5 +28,10 @@ public class MedicineList {
 
     @Column(name="NazwaLekarstwa")
     private String medicineName;
+
+    //@OneToMany(targetEntity=MedicineBatch.class, mappedBy="idOfMedicineFromMedicineList")
+    //@JoinColumn(name = "IdLekarstwaZeSpisu")
+    @OneToMany(mappedBy = "medicineList")
+    private List<MedicineBatch> batchesOfMedicine;
 
 }

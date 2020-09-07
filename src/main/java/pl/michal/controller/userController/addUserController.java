@@ -12,6 +12,7 @@ import pl.michal.model.User;
 import pl.michal.service.IUserService;
 
 @Controller
+@RequestMapping("/admin")
 public class addUserController {
 
     IUserService iUserService;
@@ -21,14 +22,14 @@ public class addUserController {
         this.iUserService = iUserService;
     }
 
-    @RequestMapping(value = "/admin/addUser", method = RequestMethod.GET)
+    @RequestMapping(value = "/addUser", method = RequestMethod.GET)
     public String addUserPage(Model model){
         model.addAttribute("errorMessage", "");
         model.addAttribute("userKey", new User());
         return ("addUser");
     }
 
-    @RequestMapping(value = "/admin/addUser", method = RequestMethod.POST)
+    @RequestMapping(value = "/addUser", method = RequestMethod.POST)
     public String sendUserInfoToServer(@ModelAttribute("userKey") User user, Model model){
         if (user.getUsername().equals(" ") || user.getPassword().equals(" ")) {
             model.addAttribute("errorMessage", "Musisz wypełnić wszystkie pola.");

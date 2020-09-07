@@ -8,29 +8,57 @@
     <style>
 
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        $('#formularz').submit(function(e){
+            var form = this;
+            e.preventDefault();
+
+            if( $('#haslo1').val()==$('#haslo2').val() ) {
+                alert('Hasła się zgadzają');
+                form.submit();
+            } else {
+                alert('Hasła się nie zgadzają');
+                return false;
+            }
+        });
+    });
+    </script>
+
 </head>
 
 <body>
 <div id="container">
     <div><p id="header">Dodawanie użytkownika do systemu</p></div>
-    <div id="outerButtonDiv">
+    <div id="biggerouterButtonDiv">
         <div th:text="${errorMessage}" id="error-message"></div>
-        <div id="table">
-            <form method="post">
-                <div class="button"><input type="text"   class="buttontext" placeholder="Nazwa użytkownika" name="username" size="30" required></div>
-                <div class="button"><input type="password" class="buttontext" placeholder="Hasło" name="password" size="30" required></div>
-                <span class="texts"> <div class="button">Jaką użytkownik ma pełnić rolę w systemie?<br>
-                <input type= "radio" id="admin" name="userrole" value="ROLE_ADMIN" checked>
-                <label for="admin">Administrator</label>
+        <div id="bigtable">
+            <form method="post" id="formularz">
+                <div class="aLotOfFormInputs"><<input type="text"  class="buttontext"  placeholder="Imię" name="name" size="2=30"  required></div>
+                <div class="aLotOfFormInputs"><input type="text"   class="buttontext" placeholder="Nazwisko" name="surname" size="30" required></div>
+                <div class="aLotOfFormInputs"><input type="email"   class="buttontext" placeholder="Email" name="email" size="30" required></div>
+                <div class="aLotOfFormInputs"><input type="text"   class="buttontext" placeholder="Nazwa użytkownika" name="username" size="30" required></div>
+                <div class="aLotOfFormInputs"><input type="password" class="buttontext" placeholder="Hasło" name="password" size="30" id="haslo1" required></div>
+                <div class="aLotOfFormInputs"><input type="password" class="buttontext" placeholder="Powtórz hasło" name="password" size="30" id="haslo2" required></div>
 
-                <input type="radio" id="user" name="userrole" value="ROLE_USER" checked>
-                <label for="user">Użytkownik</label>
+                <span class="texts"> <div class="aLotOfFormInputs">Jaką użytkownik ma pełnić rolę w systemie?<br>
+
+                <input type= "radio" id="admin" name="role" value="ROLE_ADMIN"  th:checked>
+                    <label for="admin">Administrator</label>
+
+                <input type="radio" id="user" name="role" value="ROLE_USER" th:checked>
+                    <label for="user">Użytkownik</label>
+
+               <br> <input type="radio" id="salesman" name="role" value="ROLE_SALESMAN" th:checked>
+                    <label for="salesman">Sprzedawca</label>
+
 
             </div>
             </span>
 
             </span>
-                <div class="button"><input type="submit" class="button-box" value="Dodaj użytkownika"></div>
+                <div class="aLotOfFormInputs"><input type="submit" class="button-box" value="Dodaj użytkownika"></div>
             </form>
         </div>
     </div>

@@ -25,7 +25,7 @@ public class Start {
 
         user2.setUsername("michal");
         user2.setPassword(passwordEncoder.encode("tajne"));
-        user2.setRole("ROLE_USER");
+        user2.setRole("ROLE_SALESMAN");
         userDao.addUserToDataBase(user2);
 
 

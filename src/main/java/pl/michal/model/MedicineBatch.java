@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -20,8 +21,9 @@ public class MedicineBatch {
     @Column(name="Id", nullable = false)
     private long id;
 
-    @Column(name="IdLekarstwaZeSpisu", nullable = false)
-    private int idOfMedicineFromMedicineList;
+    @ManyToOne
+    private MedicineList medicineList;
+
 
     @Column(name="Ilosc", nullable = false)
     private int quantity;
@@ -31,6 +33,9 @@ public class MedicineBatch {
 
     @Column(name="DataWaznosci", nullable = false)
     private Date expiryDate;
+
+    @OneToMany(mappedBy = "medicineBatch")
+    private List<CartElement> cartElementWithMedicineFromMedicineBatch;
 
 
 

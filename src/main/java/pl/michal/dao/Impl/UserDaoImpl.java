@@ -20,8 +20,13 @@ public class UserDaoImpl implements UserDao {
     @Override
     public User findByUsername(String username) {
         Session session = sessionFactory.openSession();
+        StringBuilder hql = new StringBuilder();
+        hql.append("FROM User WHERE username ='");
+        hql.append(username);
+        hql.append("'");
+       // System.out.println(hql.toString());
+        User user = (User) session.createQuery(hql.toString()).uniqueResult();
 
-        User user = (User) session.createQuery("FROM pl.michal.model.User WHERE username = '" + username + "'").uniqueResult();
 
         session.close();
         return user;

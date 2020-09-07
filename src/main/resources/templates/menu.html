@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="UTF-8">
     <title>Menu</title>
@@ -46,12 +47,16 @@
                 <a href="/showInfo" class="texts" ><div class="button">Informacje o danym leku</div></a>
                 <a href="/changeMedicineInfo" class="texts" ><div class="button">Zmień informacje o danym lekarstwie</div></a>
                 <a href="/sellMedicineDialog" class="texts" ><div class="button">Sprzedaj lek</div></a>
+                <a href="/sellMedicineDialog" class="texts" ><div class="button">Kup lekarstwo online</div></a>
+                <a href="/sellMedicineDialog" class="texts" ><div class="button">Kup lekarstwo online</div></a>
+                <a href="/sellMedicineDialog" class="texts" ><div class="button">Kup lekarstwo online</div></a>
             </div>
         </div>
         <div id="flange">
             <div id="flan3" style="width:33%; float:left; text-align:center;"></div>
             <div style="clear:both;"> </div>
-            <div class="flan" id="flan1"> </div>
+            <div class="flan" id="flan1"> <div sec:authorize="isAuthenticated()">
+                Authenticated as <span sec:authentication="name"></span></div></div>
             <div class="flan" id="flan2" style="width:33%; float:left; text-align:center;"><a href="/logout" class="texts" ><div id="backToMenu">Wyloguj</div></a>
                 <div style="clear:both;"> </div>&nbsp;</div>
         </div>

@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -18,6 +19,9 @@ public class Cart {
     @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name="Id", nullable = false)
     private long id;
+
+    @OneToMany(mappedBy = "cart")
+    private List<CartElement> cartElements;
 
     @Column(name="IdUzytkownika", nullable = false)
     private int userId;

@@ -37,9 +37,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/").authenticated()
                 .antMatchers("/admin/*").hasAuthority("ROLE_ADMIN")
-                .antMatchers("/changeMedicineInfo").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
-                .antMatchers("/addMedicineDialog").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
-                .antMatchers("/sellMedicineDialog").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
+                .antMatchers("/changeMedicineInfo").hasAnyAuthority( "ROLE_ADMIN", "ROLE_SALESMAN")
+                .antMatchers("/addMedicineDialog").hasAnyAuthority("ROLE_SALESMAN", "ROLE_ADMIN")
+                .antMatchers("/sellMedicineDialog").hasAnyAuthority("ROLE_SALESMAN", "ROLE_ADMIN")
                 .antMatchers("/showInfo").permitAll()
                 .and()
                 .formLogin().defaultSuccessUrl("/");

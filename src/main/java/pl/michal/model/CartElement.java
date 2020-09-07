@@ -19,14 +19,16 @@ public class CartElement {
     @Column(name="Id", nullable = false)
     private long id;
 
-    @Column(name="IdPartiiLekarstw", nullable = false)
-    private BigDecimal idOfMedicineBatch;
+    @ManyToOne
+    //@Column(name="IdPartiiLekarstw", nullable = false)
+    private MedicineBatch medicineBatch;
+
+    @ManyToOne
+    private Cart cart;
 
     @Column(name="Ilosc", nullable = false)
     private int quantity;
-
-    @Column(name="IdKoszyka", nullable = false)
-    private int cartId;
+    
 
     @Column(name="nrRecepty", nullable = false)
     private long prescriptionNumber;

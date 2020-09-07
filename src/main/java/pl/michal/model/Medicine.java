@@ -1,10 +1,17 @@
 package pl.michal.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Table(name="tlekarstwo")
+@Getter
+@Setter
+@NoArgsConstructor
 public class Medicine {
 
     @Id
@@ -21,45 +28,6 @@ public class Medicine {
     private boolean needPrescription;
 
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getMedicineName() {
-        return medicineName;
-    }
-
-    public void setMedicineName(String medicineName) {
-        this.medicineName = medicineName;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public boolean isNeedPrescription() {
-        return needPrescription;
-    }
-
-    public void setNeedPrescription(boolean needPrescription) {
-        this.needPrescription = needPrescription;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
 
     @Override
     public String toString() {
