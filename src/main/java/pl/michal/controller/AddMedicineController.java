@@ -3,10 +3,9 @@ package pl.michal.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import pl.michal.model.Medicine;
+import pl.michal.model.User;
 import pl.michal.service.IMedicineService;
 
 @Controller
@@ -21,9 +20,10 @@ public class AddMedicineController {
     }
 
     @RequestMapping(value = "/addMedicineDialog", method = RequestMethod.GET)
-    public String newMedicinePage(Model model) {
+    public String newMedicinePage(Model model, @SessionAttribute("loggedUser") User user) {
         model.addAttribute("errorMessage", "");
         model.addAttribute("medicineKey", new Medicine());
+
         return ("addMedicine");
     }
 

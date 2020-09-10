@@ -2,39 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f05001e-06f8-489e-a7eb-7553cf410336" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/michal/dao/IMedicineListDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/michal/dao/Impl/MedicineListDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/adminsMenu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/userMenu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/configuration/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/configuration/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/configuration/Start.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/controller/AddMedicineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/controller/AddMedicineController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/controller/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/controller/userController/addUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/controller/userController/addUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/dao/Impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/dao/Impl/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/model/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/model/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/model/CartElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/model/CartElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/model/Medicine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/model/Medicine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/model/MedicineBatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/model/MedicineBatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/model/MedicineList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/model/MedicineList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/service/impl/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/service/impl/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/forms.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/forms.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addUser.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/configuration/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/configuration/SecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/configuration/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/configuration/Start.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/controller/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/controller/MenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/controller/userController/addUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/controller/userController/addUserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/dao/Impl/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/dao/Impl/UserDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/model/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/model/Cart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/model/CartElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/model/CartElement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/model/Medicine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/model/Medicine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/model/MedicineBatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/model/MedicineBatch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/model/MedicineList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/model/MedicineList.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/service/impl/UserDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/service/impl/UserDetailsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/service/impl/UserServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/addUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/addUser.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/menu.html" afterDir="false" />
     </list>
@@ -96,11 +83,14 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JavaProjects\PracaInzWersjaZNowaBazaDanych\PharmacyWithSpringMVC\src\main\resources\templates\menu" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="pl.michal.model" />
       <recent name="pl.michal.service.impl" />
@@ -109,6 +99,7 @@
       <recent name="pl.michal.dao.Impl" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JavaProjects\PracaInzWersjaZNowaBazaDanych\PharmacyWithSpringMVC\src\main\resources\templates" />
       <recent name="D:\JavaProjects\PharmacyProjectWithSpring\src\main\resources" />
     </key>
   </component>
@@ -275,7 +266,10 @@
       <workItem from="1599472719013" duration="6866000" />
       <workItem from="1599484523652" duration="632000" />
       <workItem from="1599512828115" duration="753000" />
-      <workItem from="1599513593232" duration="6438000" />
+      <workItem from="1599513593232" duration="6564000" />
+      <workItem from="1599597525908" duration="3560000" />
+      <workItem from="1599649436620" duration="611000" />
+      <workItem from="1599736304235" duration="12494000" />
     </task>
     <servers />
   </component>
@@ -296,30 +290,34 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="203" key="#com.intellij.ide.util.MemberChooser" timestamp="1599483723571">
+    <state x="765" y="203" key="#com.intellij.ide.util.MemberChooser" timestamp="1599736807002">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="203" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1599483723571" />
-    <state width="1877" height="390" key="GridCell.Tab.0.bottom" timestamp="1599519879412">
+    <state x="765" y="203" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1599736807002" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599599673769">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="390" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599519879412" />
-    <state width="1877" height="390" key="GridCell.Tab.0.center" timestamp="1599519879412">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1599599673769" />
+    <state width="1877" height="399" key="GridCell.Tab.0.bottom" timestamp="1599751702474">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="390" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599519879412" />
-    <state width="1877" height="390" key="GridCell.Tab.0.left" timestamp="1599519879412">
+    <state width="1877" height="399" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599751702474" />
+    <state width="1877" height="399" key="GridCell.Tab.0.center" timestamp="1599751702474">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="390" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599519879412" />
-    <state width="1877" height="390" key="GridCell.Tab.0.right" timestamp="1599519879412">
+    <state width="1877" height="399" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599751702474" />
+    <state width="1877" height="399" key="GridCell.Tab.0.left" timestamp="1599751702474">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="390" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599519879412" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1599513593328">
+    <state width="1877" height="399" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599751702474" />
+    <state width="1877" height="399" key="GridCell.Tab.0.right" timestamp="1599751702474">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1599513593328" />
+    <state width="1877" height="399" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599751702474" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1599736306181">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1599736306181" />
     <state x="621" y="209" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1599514477548">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

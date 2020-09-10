@@ -35,6 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
        http.csrf().disable(); // cross sign request foreign
         http.headers().disable();
         http.authorizeRequests()
+                //.antMatchers("/showInfo").permitAll()
                 .antMatchers("/").authenticated()
                 .antMatchers("/admin/*").hasAuthority("ROLE_ADMIN")
                 .antMatchers("/changeMedicineInfo").hasAnyAuthority( "ROLE_ADMIN", "ROLE_SALESMAN")
@@ -42,7 +43,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/sellMedicineDialog").hasAnyAuthority("ROLE_SALESMAN", "ROLE_ADMIN")
                 .antMatchers("/showInfo").permitAll()
                 .and()
-                .formLogin().defaultSuccessUrl("/");
+                .formLogin()
+                .loginPage("/login")
+                .permitAll()
+                .defaultSuccessUrl("/");
+
+
+        http.sessionManagement()
+                //.expiredUrl("/showInfo")
+                .invalidSessionUrl("/login");
+
 
     }
 }

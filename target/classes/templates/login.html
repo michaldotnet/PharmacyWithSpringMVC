@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Spring Security Example </title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="forms.css">
+</head>
+<body>
+<div id="container">
+
+    <div><p id="header">Witaj w systemie wspomagającym pracę apteki, zaloguj się:</p></div>
+
+    <div id="outerButtonDiv">
+
+        <div id="table">
+    <form th:action="@{/login}" method="post">
+        <div class="buttonWithoutHover"><label> Nazwa użytkownika: <input class="buttontext" placeholder="Login" type="text" name="username"/> </label></div>
+        <div class="buttonWithoutHover"><label> Hasło:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp   <input class="buttontext" placeholder="Hasło" type="password" name="password"/> </label></div>
+        <div class="button"><input class="button-box" type="submit" value="Zaloguj się"/></div>
+    </form>
+    </div>
+        <div th:text="${errorMessage}" id="error-message"></div>
+    </div>
+    <div class="error-message" th:if="${param.error}">
+        Zła nazwa użytkownika lub hasło
+    </div>
+    <div class="error-message" th:if="${param.logout}">
+        Wylogowałeś się.
+    </div>
+</div>
+</body>
+</html>
