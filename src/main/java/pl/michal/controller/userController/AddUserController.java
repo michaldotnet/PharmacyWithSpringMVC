@@ -13,12 +13,12 @@ import pl.michal.service.IUserService;
 
 @Controller
 @RequestMapping("/admin")
-public class addUserController {
+public class AddUserController {
 
     IUserService iUserService;
 
     @Autowired
-    public addUserController(IUserService iUserService) {
+    public AddUserController(IUserService iUserService) {
         this.iUserService = iUserService;
     }
 

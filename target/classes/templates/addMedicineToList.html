@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" >
+    <title>Dodawanie leku</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="forms.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+<div id="container">
+    <div><p id="header">Dodawanie leku do spisu lekarstw</p></div>
+    <div id="outerButtonDiv">
+        <div th:text="${errorMessage}" id="error-message"></div>
+        <div id="table">
+            <form method="post">
+                <div class="button"><input type="text"   class="buttontext" placeholder="Nazwa Leku" name="medicineName" size="30" required></div>
+                <div class="button"><input type="text" class="buttontext" placeholder="Producent" name="producer" size="30" required></div>
+                <span class="texts"> <div class="button"> Czy lek  jest na recepte?
+                <input type= "radio" id="tak" name="needPrescription" value="true"
+                       checked>
+                <label for="tak">Tak</label>
+
+                <input type="radio" id="nie" name="needPrescription" value="false"
+                       checked>
+                <label for="nie">Nie</label>
+
+            </div>
+            </span>
+                <div class="button"><input type="submit" class="button-box" value="Dodaj lekarstwo do listy."></div>
+            </form>
+        </div>
+    </div>
+    <a href="/" class="texts" ><div id="backToMenu">Menu</div></a>
+    <div style="clear:both;"> </div>
+</div>
+</body>
+</html>
