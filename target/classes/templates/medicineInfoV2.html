@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Choose Medicine</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="forms.css">
+</head>
+
+<body>
+<div id="container">
+    <div><p id="header">Informacje o leku:</p></div>
+    <br><br><br>
+  
+    <div class="texts">Wykaz partii lekarstw:</div>
+    <div id="centerDIV">
+        <div class="texts"  th:text="'Nazwa leku:  '+ ${listOfMedicinesToShowInfoAbout.get(0).medicineList.medicineName}"></div>
+        <div class="texts"  th:text="'Producent:  '+ ${listOfMedicinesToShowInfoAbout.get(0).medicineList.producer}"></div>
+        <div class="texts">
+            <span th:text="'Czy lek jest na recepte:'"></span>
+            <span th:if="${listOfMedicinesToShowInfoAbout.get(0).medicineList.needPrescription} == true" th:text="Tak"></span>
+            <span th:unless="${listOfMedicinesToShowInfoAbout.get(0).medicineList.needPrescription} == true" th:text="Nie"></span>
+        </div>
+        <br><br>
+        <div class="texts">Wykaz partii lekarstw:</div>
+        <br><br><br><br><br><br><br><br><br>
+
+        <table class = "medicineInfoTable">
+            <tr style="border: 1px solid white">
+                <td style="border: 1px solid white">Id Partii lekarstw</td>
+                <td style="border: 1px solid white">Ilość opakowań</td>
+                <td style="border: 1px solid white">Cena za opakowanie</td>
+                <td style="border: 1px solid white">Data przydatności</td>
+            </tr>
+            <th:block   th:each="medicineBatch : ${listOfMedicinesToShowInfoAbout}">
+                <tr th:style="'border: 1px solid white'">
+                    <td th:style="'border: 1px solid white'" th:text="${medicineBatch.id}">dsa</td>
+                    <td th:style="'border: 1px solid white'" th:text="${medicineBatch.quantity}"></td>
+                    <td th:style="'border: 1px solid white'" th:text="${medicineBatch.price} + 'zł'">...</td>
+                    <td th:style="'border: 1px solid white'" th:text="${medicineBatch.expiryDate}">...</td>
+                </tr>
+            </th:block>
+        </table>
+        <br><br>
+        <form method="post">
+            <div><input type="submit" class="button-box" value="Powrót do menu"></div>
+        </form>
+    </div>
+    <a href="/" class="texts" ><div id="backToMenu">Menu</div></a>
+    <div style="clear:both;"> </div>
+</div>
+</body>
+</html>
+
+

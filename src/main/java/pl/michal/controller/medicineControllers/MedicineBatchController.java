@@ -6,19 +6,24 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import pl.michal.dao.IMedicineBatchDAO;
 import pl.michal.dao.IMedicineListDao;
+import pl.michal.model.Medicine;
 import pl.michal.model.MedicineBatch;
 import pl.michal.model.MedicineList;
 
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class MedicineBatchController {
 
     IMedicineBatchDAO iMedicineBatchDAO;
     IMedicineListDao iMedicineListDao;
+
 
     public MedicineBatchController(IMedicineBatchDAO iMedicineBatchDAO, IMedicineListDao iMedicineListDao) {
         this.iMedicineBatchDAO = iMedicineBatchDAO;
@@ -55,6 +60,39 @@ public class MedicineBatchController {
             return "redirect:";
         }
     }
+
+    @RequestMapping(value ="/showInfoAboutMedicine", method = RequestMethod.GET)
+    public String chooseMedicinePage(Model model){
+        List<MedicineList> listOfMedicines = iMedicineListDao.getAllMedicinesFromList();
+        model.addAttribute("medicineList", listOfMedicines);
+        model.addAttribute("medicineFromList", new MedicineList());
+        model.addAttribute("errorMessage", "");
+        return "showMedicineV2";
+    }
+
+
+    @RequestMapping(value = "/showInfoAboutMedicine", method = RequestMethod.POST)
+    public String giveMedicineName(@ModelAttribute("medicineFromList") MedicineList medicineList, final RedirectAttributes redirectAttributes, Model model) {
+        System.out.println(medicineList.getMedicineName());
+        List<MedicineBatch> listofChoosenMedicineBatches = iMedicineBatchDAO.getAllMedicineBatchesOfTheSameMedicineByMedicineName(medicineList.getMedicineName());
+        listofChoosenMedicineBatches.forEach(x -> System.out.println(x.toString()));
+
+        redirectAttributes.addFlashAttribute("listOfMedicinesToShowInfoAbout", listofChoosenMedicineBatches);
+        return "redirect:/infoAboutMedicine";
+    }
+
+    @RequestMapping(value = "/infoAboutMedicine", method = RequestMethod.GET)
+    public String showInfoAboutMedicine(@ModelAttribute("listOfMedicinesToShowInfoAbout") List<MedicineBatch> medicineBatchList) {
+        System.out.println(medicineBatchList.toString());
+        return "medicineInfoV2";
+    }
+
+    @RequestMapping(value = "/infoAboutMedicine", method = RequestMethod.POST)
+    public String goBackToMenu() {
+        return "redirect:/menu";
+    }
+
+
 
     public boolean checkIfMedicineExistInDB(String medicineName){
 

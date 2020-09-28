@@ -1,15 +1,14 @@
 package pl.michal.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 import java.util.Set;
 
 @Entity
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name="SpisLekarstw")
@@ -31,7 +30,16 @@ public class MedicineList {
 
     //@OneToMany(targetEntity=MedicineBatch.class, mappedBy="idOfMedicineFromMedicineList")
     //@JoinColumn(name = "IdLekarstwaZeSpisu")
-    @OneToMany(mappedBy = "medicineList")
+    @OneToMany(mappedBy = "medicineList", fetch = FetchType.EAGER)
     private List<MedicineBatch> batchesOfMedicine;
 
+    @Override
+    public String toString() {
+        return "MedicineList{" +
+                "id=" + id +
+                ", needPrescription=" + needPrescription +
+                ", producer='" + producer + '\'' +
+                ", medicineName='" + medicineName + '\'' +
+                '}';
+    }
 }

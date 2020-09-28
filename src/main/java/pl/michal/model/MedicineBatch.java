@@ -1,8 +1,6 @@
 package pl.michal.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -10,7 +8,8 @@ import java.sql.Date;
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name="PartiaLekarstw")
@@ -37,6 +36,14 @@ public class MedicineBatch {
     @OneToMany(mappedBy = "medicineBatch")
     private List<CartElement> cartElementWithMedicineFromMedicineBatch;
 
-
+    @Override
+    public String toString() {
+        return "MedicineBatch{" +
+                "id=" + id +
+                ", " +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                ", medicine Name=" + medicineList +
+                ", expiryDate=" + expiryDate ;};
 
 }

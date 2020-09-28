@@ -41,15 +41,15 @@ public class MedicineBatchDAOImpl implements IMedicineBatchDAO {
 
         StringBuilder hql = new StringBuilder();
         hql.append("SELECT mb ");
-        hql.append("FROM MedicineBatch mb, MedicineList ml" );
-        hql.append("WHERE mb.medicineList_Id = ml.Id ");
-        hql.append("AND medicinename = '");
+        hql.append("FROM MedicineBatch mb, MedicineList ml ");
+        hql.append("WHERE mb.medicineList = ml.id ");
+        hql.append("AND ml.medicineName = '");
         hql.append(medicineName);
         hql.append("'");
+        System.out.println(hql.toString());
 
         Query query = session.createQuery(hql.toString());
-        List<MedicineBatch> allMedicineBatchesFromDB = new ArrayList<>();
-        allMedicineBatchesFromDB = query.list();
+        List<MedicineBatch> allMedicineBatchesFromDB = query.list();
 
         //MedicineBatch medicineBatch = (MedicineBatch) session.createQuery("FROM MedicineBatch, MedicineList WHERE medicinename = '" + medicineName + "'").uniqueResult();
         //List<MedicineList> allMedicinesFromDB = new ArrayList<>();

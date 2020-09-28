@@ -5,7 +5,6 @@
     border: 3px solid white;
     border-radius: 15px;
     text-align: center;
-    font-family: 'Bad Script';
     height: 20%;
 }
 #container{
@@ -69,8 +68,17 @@ input{
 .flan {
     float: left;
     width: 33%;
+    height: 100%;
     color: white;
     text-align:center;
+}
+.outr {
+    float: left;
+    color: white;
+    display: table;
+    text-align:center;
+    height: 100%;
+    width: 33%;
 }
 #backToMenu{
 

@@ -52,7 +52,9 @@ public class MedicineListDaoImpl implements IMedicineListDao {
         Session session = sessionFactory.openSession();
 
         List<MedicineList> allMedicinesFromDB = new ArrayList<>();
-        allMedicinesFromDB = session.createSQLQuery("SELECT * FROM SpisLekarstw").list();
+        allMedicinesFromDB = session
+                                .createQuery("FROM MedicineList")
+                                .list();
 
         session.close();
 

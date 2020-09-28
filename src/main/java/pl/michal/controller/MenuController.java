@@ -12,35 +12,24 @@ import pl.michal.model.User;
 import java.security.Principal;
 
 @Controller
-@SessionAttributes("loggedUser")
 public class MenuController {
 
-    UserDao userDao;
-
-    public MenuController(UserDao userDao)
-    {
-        this.userDao = userDao;
+    public MenuController() {
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String menu(Principal principal, Model model) {
+    @RequestMapping(value = "/menu", method = RequestMethod.GET)
+    public String menu(@SessionAttribute("loggedUser") User loggedUser, Model model) {
 
-
-            User loggedUser = userDao.findByUsername(principal.getName());
         model.addAttribute("loggedUser", loggedUser);
 
 
-
-           // System.out.println(principal.getName() + " has logged in.");
-            //User loggedUser = userDao.findByUsername(principal.getName());
-
        if(loggedUser.getRole().equals("ROLE_ADMIN")){
-           return "adminsMenu";
+           return "adminsMenuV2";
        }else if(loggedUser.getRole().equals("ROLE_USER")){
-           return "userMenu";
+           return "userMenuV2";
        }
 
-        return "menu";
+        return "menuV2";
     }
 
 

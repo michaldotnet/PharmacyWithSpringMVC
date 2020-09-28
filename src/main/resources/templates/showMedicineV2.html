@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Choose Medicine</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="forms.css">
+</head>
+<body>
+<div id="container">
+    <div><p id="header">Podaj nazwę leku, o którym chcesz wyświetlić informację</p></div>
+    <div id="outerButtonDiv">
+        <div id="table">
+            <form method="post">
+                <!--
+                                <div class="button">
+                                    <select id ="button-selectOption" th:field="${medicineFromList}">
+                                        <option th:each="medicine : ${medicineList}" th:value="${medicine}" th:text="${medicine.medicineName}"></option>
+                                    </select>
+                                </div>
+
+
+                                                <div class="button">
+                                                    <input list="medicines" name="browser" id="browser">
+                                                    <datalist id="medicines" th:field="${medicineFromList.medicineName}">
+                                                        <option th:each="medicine : ${medicineList}" th:value="${medicine.medicineName}" >
+                                                    </datalist>
+                                                </div>
+                                                -->
+
+                                <div class="button">
+                                    <input list="medicines" class="buttontext" th:field="${medicineFromList.medicineName}">
+                                    <datalist id="medicines">
+                                        <select>
+                                        <option th:each="medicine : ${medicineList}" th:value="${medicine.medicineName}"></option>
+                                        </select>
+                                    </datalist>
+                                </div>
+
+
+                                                <div class="button"><input type="submit" class="button-box" value="Pokaż informacje"></div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div th:text="${errorMessage}" id="error-message"></div>
+                                    <a href="/menu" class="texts" ><div id="backToMenu">Menu</div></a>
+                                    <div style="clear:both;"> </div>
+                                </div>
+
+                                </body>
+                                </html>

@@ -34,19 +34,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
        http.csrf().disable(); // cross sign request foreign
         http.headers().disable();
+        //http.httpBasic();
         http.authorizeRequests()
                 //.antMatchers("/showInfo").permitAll()
                 .antMatchers("/").authenticated()
                 .antMatchers("/admin/*").hasAuthority("ROLE_ADMIN")
                 .antMatchers("/changeMedicineInfo").hasAnyAuthority( "ROLE_ADMIN", "ROLE_SALESMAN")
+                .antMatchers("/addMedicineToListDialog").hasAnyAuthority( "ROLE_ADMIN", "ROLE_SALESMAN")
+                .antMatchers("/addNewMedicineBatch").hasAnyAuthority( "ROLE_ADMIN", "ROLE_SALESMAN")
                 .antMatchers("/addMedicineDialog").hasAnyAuthority("ROLE_SALESMAN", "ROLE_ADMIN")
                 .antMatchers("/sellMedicineDialog").hasAnyAuthority("ROLE_SALESMAN", "ROLE_ADMIN")
-                .antMatchers("/showInfo").permitAll()
+                .antMatchers("/showInfo").hasAnyAuthority("ROLE_SALESMAN", "ROLE_ADMIN", "ROLE_USER")
+                .antMatchers("/menu").hasAnyAuthority("ROLE_SALESMAN", "ROLE_ADMIN", "ROLE_USER")
                 .and()
                 .formLogin()
-                .loginPage("/login")
-                .permitAll()
-                .defaultSuccessUrl("/");
+                .loginPage("/login").permitAll()
+                .defaultSuccessUrl("/", true);
+
+
 
 
         http.sessionManagement()
