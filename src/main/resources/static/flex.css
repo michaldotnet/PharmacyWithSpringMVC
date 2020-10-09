@@ -1,0 +1,49 @@
+html,body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: black;
+}
+
+#containerForFlexContainer {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+    background-color: black;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+#flexHeader{
+    color: #00ae99;
+    font-size: 50px;
+    border: 3px solid white;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#containerForErrorPage{
+    display: flex;
+    align-items: center;
+    height: 60%;
+    width: 40%;
+    background-color: black;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#errorMesagge{
+    color: #00ae99;
+    font-size: 50px;
+    border: 3px solid white;
+    border-radius: 15px;
+    text-align: center;
+}

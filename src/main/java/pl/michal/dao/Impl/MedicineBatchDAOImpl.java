@@ -35,6 +35,22 @@ public class MedicineBatchDAOImpl implements IMedicineBatchDAO {
         }
     }
 
+    public void updateMedicineBatch(MedicineBatch medicineBatch){
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+
+        try{
+            tx = session.beginTransaction();
+            session.update(medicineBatch);
+            tx.commit();
+        } catch(HibernateException e){
+            if(tx != null) tx.rollback();
+        }
+        finally {
+            session.close();
+        }
+    }
+
     @Override
     public List<MedicineBatch> getAllMedicineBatchesOfTheSameMedicineByMedicineName(String medicineName) {
         Session session = sessionFactory.openSession();
@@ -61,6 +77,8 @@ public class MedicineBatchDAOImpl implements IMedicineBatchDAO {
 
     @Override
     public void sellMedicine(String medicineName, int quantity) {
+        List<MedicineBatch> allMedicineBatchesFromDB =  this.getAllMedicineBatchesOfTheSameMedicineByMedicineName(medicineName);
+
 
     }
 }
