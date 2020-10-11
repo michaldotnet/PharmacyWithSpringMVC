@@ -47,3 +47,12 @@ html,body{
     border-radius: 15px;
     text-align: center;
 }
+
+#backToMenuV2{
+    align-items: center;
+    justify-content: center;
+    border: solid white 1px;
+    text-align: center;
+    margin: 50px;
+    padding: 10px;
+}

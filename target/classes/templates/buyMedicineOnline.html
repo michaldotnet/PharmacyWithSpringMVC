@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Choose Medicine</title>
+
+    <link rel="stylesheet" href="forms.css">
+    <link rel="stylesheet" href="flex.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    function ajax(name) {
+        if(name == "") return ;
+        var aj = new XMLHttpRequest();
+        aj.onreadystatechange = function () {
+            if (aj.readyState == 4 && aj.status == 200){
+                $('#info').html(aj.responseText);
+            }
+        };
+
+        aj.open("GET", "/html/medicine/" + name, true);
+        aj.send();
+    }
+</script>
+</head>
+
+<body>
+<div id ="containerForFlexContainer">
+    <div id="flexHeader" >Kupowanie lekarstwa online</div>
+    <br><br><br><br>
+
+    <br>
+
+    <form method="post">
+    <div class="button">
+        <input list="medicines" class="buttontext" th:field="${medicineFromList.medicineName}" onchange="ajax(this.value);">
+        <datalist id="medicines">
+            <select>
+                <option th:each="medicine : ${medicineList}" th:value="${medicine.medicineName}"></option>
+            </select>
+        </datalist>
+    </div>
+        <div id ="info"></div>
+        <div class="button">
+            <input type="number" class="buttontext" placeholder="Ilość opakowań" name="quantityOfMedicine" size="30" required>
+        </div>
+        <div class="button"><input type="submit" class="button-box" value="Dodaj do koszyka"></div>
+        <div id="backToMenuV2"><a href="/menu" class="texts" >Powrót do menu</a></div>
+    </form>
+
+</div>
+</body>
+</html>
+
+
