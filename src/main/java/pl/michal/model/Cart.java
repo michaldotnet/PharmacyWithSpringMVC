@@ -23,8 +23,9 @@ public class Cart {
     @OneToMany(mappedBy = "cart")
     private List<CartElement> cartElements;
 
-    @Column(name="IdUzytkownika", nullable = false)
-    private int userId;
+    @JoinColumn(name="IdUzytkownika", nullable = false)
+    @OneToOne
+    private User user;
 
     @Column(name="CzyZaplacono", nullable = false)
     private boolean isPaid;

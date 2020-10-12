@@ -62,7 +62,6 @@ public class MedicineBatchServiceImpl implements IMedicineBatchService {
         return "";
     }
 
-
     //sortowanie partii lekarstw po dacie, od tych ktorych data sie konczy najwczesniej do tych co maja najdluzsza date
     private List<MedicineBatch> sortMedicineBatchesListByExpiryDate(List<MedicineBatch> allMedicineBatchesOfMedicineForSell){
         Collections.sort(allMedicineBatchesOfMedicineForSell, (a, b) -> {
@@ -73,5 +72,13 @@ public class MedicineBatchServiceImpl implements IMedicineBatchService {
             } else return 0;
         });
         return allMedicineBatchesOfMedicineForSell;
+    }
+
+    public int getHowManyUnitsOfMedicineAvailable(List<MedicineBatch> allMedicineBatchesOfMedicineForSell){
+        int howManyMedicineUnitsOfThatMedicineIsAvailable = 0;
+        for(int i = 0 ; i < allMedicineBatchesOfMedicineForSell.size(); i++){
+            howManyMedicineUnitsOfThatMedicineIsAvailable += allMedicineBatchesOfMedicineForSell.get(i).getQuantity();
+        }
+        return howManyMedicineUnitsOfThatMedicineIsAvailable;
     }
 }

@@ -56,3 +56,16 @@ html,body{
     margin: 50px;
     padding: 10px;
 }
+
+.flexButton{
+    font-size: 30px;
+    border: 1px solid white;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    cursor: pointer;
+    -webkit-transition: 2s; /* Safari prior 6.1 */
+    transition: 2s;
+}

@@ -26,10 +26,9 @@
 <body>
 <div id ="containerForFlexContainer">
     <div id="flexHeader" >Kupowanie lekarstwa online</div>
-    <br><br><br><br>
-
     <br>
-
+    <br>
+    <div th:text="${errorMessage}" id="error-message"></div>
     <form method="post">
     <div class="button">
         <input list="medicines" class="buttontext" th:field="${medicineFromList.medicineName}" onchange="ajax(this.value);">

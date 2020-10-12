@@ -73,12 +73,9 @@ public class MedicineBatchController {
 
     @RequestMapping(value = "/showInfoAboutMedicine", method = RequestMethod.POST)
     public String giveMedicineName(@ModelAttribute("medicineFromList") MedicineList medicineList, final RedirectAttributes redirectAttributes, Model model) {
-        System.out.println(medicineList.toString());
-        System.out.println(medicineList.getProducer());
 
         List<MedicineBatch> listofChoosenMedicineBatches = iMedicineBatchDAO.getAllMedicineBatchesOfTheSameMedicineByMedicineName(medicineList.getMedicineName());
         MedicineList medicineFromList = iMedicineListDao.getMedicineFromList(medicineList.getMedicineName());
-        //listofChoosenMedicineBatches.forEach(x -> System.out.println(x.toString()));
 
         redirectAttributes.addFlashAttribute("listOfMedicinesToShowInfoAbout", listofChoosenMedicineBatches);
         redirectAttributes.addFlashAttribute("medicineFromList", medicineFromList);
