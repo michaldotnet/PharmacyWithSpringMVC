@@ -10,7 +10,16 @@
       cursor: pointer;
         -webkit-transition: 2s; /* Safari prior 6.1 */
         transition: 2s;
-
+}
+.medicineInfoTable{
+    color: #00ae99;
+    font-size: 25px;
+    border: 1px solid white;
+    padding: 10px 15px;
+    border-collapse: collapse;
+    text-align: center;
+    width: 70%;
+    align-self: center;
 }
 .buttonWithoutHover{
     font-size: 30px;
@@ -96,11 +105,5 @@
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
 }
-.medicineInfoTable{
-    color: #00ae99;
-    font-size: 25px;
-    border: 1px solid white;
-    border-collapse: collapse;
-    text-align: center;
-}
+
 

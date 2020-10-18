@@ -25,8 +25,8 @@ public class User implements UserDetails {
     private String surname;
     private String email;
 
-    @OneToOne(mappedBy = "user")
-    private Cart cart;
+   // @OneToOne(mappedBy = "user")
+   // private Cart cart;
 
     private String role;
 
@@ -54,13 +54,15 @@ public class User implements UserDetails {
         this.role = role;
     }
 
-    public Cart getCart() {
+   /* public Cart getCart() {
         return cart;
     }
 
     public void setCart(Cart cart) {
         this.cart = cart;
     }
+
+    */
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

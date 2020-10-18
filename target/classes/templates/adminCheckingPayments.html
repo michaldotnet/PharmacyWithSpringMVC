@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Choose Medicine</title>
+
+    <link rel="stylesheet" href="forms.css">
+    <link rel="stylesheet" href="flex.css">
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+<div id ="containerForFlexContainer">
+    <div id="flexHeader" >Informacje o leku</div>
+
+
+    <div class="texts">Koszyki użytkowników:</div>
+    <br><br>
+    <table class = "medicineInfoTable">
+        <tr style="border: 1px solid white; text-align: center;">
+            <td style="border: 1px solid white">Id Koszyka</td>
+            <td style="border: 1px solid white">Suma płatności</td>
+            <td style="border: 1px solid white">Czy zapłacono</td>
+        </tr>
+        <th:block   th:each="cart : ${allCarts}">
+                <td id ="xd" th:style="'border: 1px solid white'" th:text="${cart.id}"></td>
+                <td th:style="'border: 1px solid white'" th:text="${cart.sumOfPayments}"></td>
+                <td th:style="'border: 1px solid white'" th:text="${cart.isPaid}"></td>
+
+                <td th:style="'border: 1px solid white'"><input type="submit" value="Zapłacono" /></td>
+                <td><input type="hidden" name="cartId" th:value="${cart.id}" /></td>
+            </tr>
+        </th:block>
+    </table>
+    <br><br><br><br><br><br>
+    <form method="post">
+        <div><input type="submit" class="button-box" value="Powrót do menu"></div>
+    </form>
+
+</div>
+</body>
+</html>
+
+

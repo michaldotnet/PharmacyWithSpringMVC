@@ -4,10 +4,11 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import pl.michal.dao.ICartDao;
+import pl.michal.dao.ICartElementDao;
 import pl.michal.dao.IMedicineListDao;
-import pl.michal.model.Cart;
-import pl.michal.model.MedicineBatch;
-import pl.michal.model.MedicineList;
+import pl.michal.model.*;
+import pl.michal.service.ICartService;
 import pl.michal.service.IMedicineBatchService;
 
 import java.util.List;
@@ -17,11 +18,17 @@ public class SellMedicineControllerV2 {
 
     IMedicineBatchService medicineBatchService;
     IMedicineListDao iMedicineListDao;
+    ICartDao cartDao;
+    ICartElementDao cartElementDao;
+    ICartService cartService;
 
 
-    public SellMedicineControllerV2(IMedicineBatchService medicineBatchService, IMedicineListDao iMedicineListDao) {
+    public SellMedicineControllerV2(IMedicineBatchService medicineBatchService, IMedicineListDao iMedicineListDao, ICartDao cartDao, ICartElementDao cartElementDao, ICartService cartService) {
         this.medicineBatchService = medicineBatchService;
         this.iMedicineListDao = iMedicineListDao;
+        this.cartDao = cartDao;
+        this.cartElementDao = cartElementDao;
+        this.cartService = cartService;
     }
 
     @RequestMapping(value = "/sellMedicine", method = RequestMethod.GET)
@@ -63,28 +70,39 @@ public class SellMedicineControllerV2 {
     }
 
    @RequestMapping(value = "/buyMedicineOnline", method = RequestMethod.POST)
-    public String buyMedicineOnlineDialog(@ModelAttribute("medicineFromList") MedicineList medicineList, @RequestParam("quantityOfMedicine") int quantityOfMedicine, Model model){
-         //if()
-        MedicineList medicineFromList = iMedicineListDao.getMedicineFromList(medicineList.getMedicineName());
-        int numberOfAvailableMedicines = medicineBatchService.getHowManyUnitsOfMedicineAvailable(medicineFromList.getBatchesOfMedicine());
+    public String buyMedicineOnlineDialog(@ModelAttribute("medicineFromList") MedicineList medicineList, @RequestParam("quantityOfMedicine") int quantityOfMedicine,
+                                          @SessionAttribute("loggedUser") User loggedUser, Model model){
+         Cart cartForShopping = cartDao.getUserCart(loggedUser);
+         if(cartForShopping==null){
+             System.out.println("User nie ma koszyka, zakładam koszyk");
+             Cart userCart = new Cart();
+             userCart.setUser(loggedUser);
+             cartForShopping = userCart;
+             cartDao.addNewCart(userCart);
+         }
 
-        if(numberOfAvailableMedicines < quantityOfMedicine){
+        MedicineList medicineFromList = iMedicineListDao.getMedicineFromList(medicineList.getMedicineName());
+        int resultOfAddingElementsToCart = cartService.addPositionToCart(medicineFromList.getMedicineName(), quantityOfMedicine, cartForShopping);
+
+        if(resultOfAddingElementsToCart==1){
             List<MedicineList> listOfMedicines = iMedicineListDao.getAllMedicinesFromList();
-            model.addAttribute("errorMessage", "Nie ma tylu dostępnych opakowań tego lekarstwa...");
+            model.addAttribute("errorMessage", "Nie ma tego lekarstwa w aptece");
+            model.addAttribute("medicineList", listOfMedicines);
+            model.addAttribute("medicineFromList", new MedicineList());
+            return ("buyMedicineOnline");
+        }else if(resultOfAddingElementsToCart==2){
+            List<MedicineList> listOfMedicines = iMedicineListDao.getAllMedicinesFromList();
+            model.addAttribute("errorMessage", "Nie ma wystarczającej ilości tego lekarstwa na stanie");
             model.addAttribute("medicineList", listOfMedicines);
             model.addAttribute("medicineFromList", new MedicineList());
             return ("buyMedicineOnline");
         }else{
-            // Dodaj lekarstwo do koszyka
-            Cart userCart = new Cart();
-
             List<MedicineList> listOfMedicines = iMedicineListDao.getAllMedicinesFromList();
             model.addAttribute("errorMessage", "Dodano lekarstwo do koszyka");
             model.addAttribute("medicineList", listOfMedicines);
             model.addAttribute("medicineFromList", new MedicineList());
             return ("buyMedicineOnline");
         }
-
 
     }
 

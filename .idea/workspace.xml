@@ -2,27 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f05001e-06f8-489e-a7eb-7553cf410336" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/michal/dao/ICartDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/michal/dao/ICartElementDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/michal/dao/Impl/CartDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/michal/dao/Impl/CartElementDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/michal/controller/cartControllers/CartController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/michal/service/ICartElementService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/michal/service/ICartService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/michal/service/impl/CartServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/adminCheckingPayments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/paymentView.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/viewCart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/controller/medicineControllers/MedicineBatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/controller/medicineControllers/MedicineBatchController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/controller/medicineControllers/SellMedicineControllerV2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/controller/medicineControllers/SellMedicineControllerV2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/dao/ICartDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/dao/ICartDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/dao/ICartElementDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/dao/ICartElementDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/dao/Impl/CartDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/dao/Impl/CartDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/dao/Impl/CartElementDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/dao/Impl/CartElementDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/model/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/model/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/model/CartElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/model/CartElement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/service/IMedicineBatchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/service/IMedicineBatchService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/michal/service/impl/MedicineBatchServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/michal/service/impl/MedicineBatchServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/flex.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/flex.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/buyMedicineOnline.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/buyMedicineOnline.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/forms.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/forms.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/adminsMenuV2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/adminsMenuV2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/menuV2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/menuV2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userMenuV2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userMenuV2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/controller/medicineControllers/MedicineBatchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/controller/medicineControllers/MedicineBatchController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/controller/medicineControllers/SellMedicineControllerV2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/controller/medicineControllers/SellMedicineControllerV2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/service/IMedicineBatchService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/service/IMedicineBatchService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/dao/ICartDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/dao/ICartDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/dao/ICartElementDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/dao/ICartElementDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/dao/Impl/CartDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/dao/Impl/CartDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/dao/Impl/CartElementDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/dao/Impl/CartElementDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/model/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/model/Cart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/model/CartElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/model/CartElement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/model/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pl/michal/service/impl/MedicineBatchServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/michal/service/impl/MedicineBatchServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/flex.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/flex.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/buyMedicineOnline.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/buyMedicineOnline.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/forms.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/forms.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/adminsMenuV2.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/adminsMenuV2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/menuV2.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/menuV2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/userMenuV2.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/userMenuV2.html" afterDir="false" />
     </list>
@@ -50,9 +61,9 @@
       <list>
         <option value="HTML4 File" />
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -289,6 +300,11 @@
       <workItem from="1602358935927" duration="798000" />
       <workItem from="1602417518762" duration="9727000" />
       <workItem from="1602501044265" duration="10143000" />
+      <workItem from="1602585146328" duration="7261000" />
+      <workItem from="1602674153102" duration="10697000" />
+      <workItem from="1602705219304" duration="1015000" />
+      <workItem from="1602846184461" duration="9983000" />
+      <workItem from="1603016423763" duration="6866000" />
     </task>
     <servers />
   </component>
@@ -309,10 +325,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="203" key="#com.intellij.ide.util.MemberChooser" timestamp="1602511267493">
+    <state x="765" y="203" key="#com.intellij.ide.util.MemberChooser" timestamp="1603022039378">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="203" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1602511267493" />
+    <state x="765" y="203" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1603022039378" />
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599599673769">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -321,33 +337,33 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="246" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599861812363" />
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1602511462516">
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1603023424317">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602511462516" />
-    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1602511462516">
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603023424317" />
+    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1603023424317">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602511462516" />
-    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1602511462516">
+    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603023424317" />
+    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1603023424317">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602511462516" />
-    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1602511462516">
+    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603023424317" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1603023424317">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602511462516" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1602501044487">
+    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603023424317" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1603016424709">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602501044487" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603016424709" />
     <state x="621" y="209" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1599514477548">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="621" y="209" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1599514477548" />
-    <state x="953" y="0" width="974" height="1047" maximized="true" key="dock-window-1" timestamp="1601023180694">
+    <state x="-7" y="0" width="974" height="1047" maximized="true" key="dock-window-1" timestamp="1603017579192">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="953" y="0" width="974" height="1047" maximized="true" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1601023180694" />
+    <state x="-7" y="0" width="974" height="1047" maximized="true" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1603017579192" />
   </component>
 </project>

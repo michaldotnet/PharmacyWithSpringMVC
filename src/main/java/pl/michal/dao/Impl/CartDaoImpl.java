@@ -10,6 +10,9 @@ import pl.michal.model.Cart;
 import pl.michal.model.MedicineList;
 import pl.michal.model.User;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Repository
 public class CartDaoImpl implements ICartDao {
 
@@ -54,13 +57,45 @@ public class CartDaoImpl implements ICartDao {
     }
 
     @Override
+    public void updateCart(Cart cart) {
+        Session session = sessionFactory.openSession();
+
+
+        Transaction tx = null;
+        try{
+            tx = session.beginTransaction();
+            session.update(cart);
+            tx.commit();
+        } catch(HibernateException e){
+            if(tx != null) tx.rollback();
+        }
+        finally {
+            session.close();
+        }
+    }
+
+    @Override
     public Cart getUserCart(User user) {
         Session session = sessionFactory.openSession();
 
 
-        Cart cart = (Cart) session.createQuery("FROM Cart WHERE UserId = '" + user.getId() + "'").uniqueResult();
+        Cart cart = (Cart) session.createQuery("FROM Cart WHERE user = '" + user.getId() + "'").uniqueResult();
 
         session.close();
         return cart;
+    }
+
+    @Override
+    public List<Cart> getAllCarts() {
+        Session session = sessionFactory.openSession();
+
+        List<Cart> allCartsFromDB = new ArrayList<>();
+        allCartsFromDB = session
+                .createQuery("FROM Cart")
+                .list();
+
+        session.close();
+
+        return allCartsFromDB;
     }
 }

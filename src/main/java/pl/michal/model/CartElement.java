@@ -28,10 +28,6 @@ public class CartElement {
 
     @Column(name="Ilosc", nullable = false)
     private int quantity;
-    
-
-    @Column(name="nrRecepty", nullable = false)
-    private long prescriptionNumber;
 
     @Column(name="CenaJednostkowa", nullable = false)
     private BigDecimal unitPrice;

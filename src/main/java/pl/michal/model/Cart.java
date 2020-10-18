@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.List;
 
@@ -23,15 +24,20 @@ public class Cart {
     @OneToMany(mappedBy = "cart")
     private List<CartElement> cartElements;
 
-    @JoinColumn(name="IdUzytkownika", nullable = false)
+    //@JoinColumn(name="IdUzytkownika", nullable = false)
     @OneToOne
     private User user;
 
-    @Column(name="CzyZaplacono", nullable = false)
-    private boolean isPaid;
+    @Column(name="CzyZaplacono")
+    private Boolean isPaid;
 
-    @Column(name="DataZaplaty", nullable = false)
+    @Column(name="DataZaplaty", nullable = true)
     private Date dateOfPayment;
 
+    @Column(name="nrRecepty", nullable = false)
+    private long prescriptionNumber;
+
+    @Column(name="SumaPlatnosci", nullable = true)
+    private BigDecimal sumOfPayments;
 
 }
