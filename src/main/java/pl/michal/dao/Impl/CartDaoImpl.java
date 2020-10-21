@@ -42,7 +42,6 @@ public class CartDaoImpl implements ICartDao {
     public void deleteCart(Cart cart) {
         Session session = sessionFactory.openSession();
 
-
         Transaction tx = null;
         try{
             tx = session.beginTransaction();
@@ -60,7 +59,6 @@ public class CartDaoImpl implements ICartDao {
     public void updateCart(Cart cart) {
         Session session = sessionFactory.openSession();
 
-
         Transaction tx = null;
         try{
             tx = session.beginTransaction();
@@ -77,9 +75,16 @@ public class CartDaoImpl implements ICartDao {
     @Override
     public Cart getUserCart(User user) {
         Session session = sessionFactory.openSession();
-
-
         Cart cart = (Cart) session.createQuery("FROM Cart WHERE user = '" + user.getId() + "'").uniqueResult();
+
+        session.close();
+        return cart;
+    }
+
+    @Override
+    public Cart getCartById(long id) {
+        Session session = sessionFactory.openSession();
+        Cart cart = (Cart) session.createQuery("FROM Cart WHERE id = '" + id + "'").uniqueResult();
 
         session.close();
         return cart;

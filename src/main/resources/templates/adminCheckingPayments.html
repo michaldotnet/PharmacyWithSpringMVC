@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="forms.css">
     <link rel="stylesheet" href="flex.css">
     <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function ajax(id) {
+            if(id == "") return ;
+            var aj = new XMLHttpRequest();
+            aj.onreadystatechange = function () {
+                if (aj.readyState == 4 && aj.status == 200){
+                    $('#xd').html(aj.responseText);
+                }
+            };
+
+            aj.open("GET", "/html/commitPayment/" + id, true);
+            aj.send();
+        }
+    </script>
 
 </head>
 
@@ -24,12 +39,14 @@
             <td style="border: 1px solid white">Czy zapłacono</td>
         </tr>
         <th:block   th:each="cart : ${allCarts}">
-                <td id ="xd" th:style="'border: 1px solid white'" th:text="${cart.id}"></td>
+                <td th:style="'border: 1px solid white'" th:text="${cart.id}"></td>
                 <td th:style="'border: 1px solid white'" th:text="${cart.sumOfPayments}"></td>
-                <td th:style="'border: 1px solid white'" th:text="${cart.isPaid}"></td>
 
-                <td th:style="'border: 1px solid white'"><input type="submit" value="Zapłacono" /></td>
-                <td><input type="hidden" name="cartId" th:value="${cart.id}" /></td>
+                <td id ="xd" th:style="'border: 1px solid white'" th:if="${cart.isPaid} == true" th:text="Tak"></td>
+                <td id ="xd" th:style="'border: 1px solid white'" th:unless="${cart.isPaid} == true" th:text="Nie"></td>
+
+                <td th:style="'border: 1px solid white'"><input type="submit" value="Zapłacono" onclick="ajax(cartId.value)" class="button-box"/></td>
+                <input type="hidden" name="cartId" id="cartId" th:value="${cart.id}"/>
             </tr>
         </th:block>
     </table>

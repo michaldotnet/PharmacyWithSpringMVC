@@ -11,5 +11,6 @@ public interface ICartService {
 
     int addPositionToCart(String medicineName , int quantityForSell, Cart cart);
     BigDecimal getSumOfPayment(List<CartElement> listOfPositionsFromUserCart);
+    void updateDbAfterCommitingPayment(long cartId);
 
 }

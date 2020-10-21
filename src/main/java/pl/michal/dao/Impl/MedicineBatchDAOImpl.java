@@ -3,6 +3,7 @@ package pl.michal.dao.Impl;
 import org.hibernate.*;
 import org.springframework.stereotype.Repository;
 import pl.michal.dao.IMedicineBatchDAO;
+import pl.michal.model.Cart;
 import pl.michal.model.Medicine;
 import pl.michal.model.MedicineBatch;
 import pl.michal.model.MedicineList;
@@ -49,6 +50,15 @@ public class MedicineBatchDAOImpl implements IMedicineBatchDAO {
         finally {
             session.close();
         }
+    }
+
+    @Override
+    public MedicineBatch getMedicineBatchById(long id) {
+        Session session = sessionFactory.openSession();
+        MedicineBatch medicineBatch = (MedicineBatch) session.createQuery("FROM MedicineBatch WHERE id = '" + id + "'").uniqueResult();
+
+        session.close();
+        return medicineBatch;
     }
 
     @Override

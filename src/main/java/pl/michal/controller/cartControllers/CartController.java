@@ -1,5 +1,6 @@
 package pl.michal.controller.cartControllers;
 
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,7 @@ import pl.michal.service.ICartService;
 import pl.michal.service.IMedicineBatchService;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -119,13 +121,30 @@ public class CartController {
     @RequestMapping(value = "/showCarts", method = RequestMethod.GET)
     public String showCartToAdmin(Model model){
         List<Cart> allCarts = cartDao.getAllCarts();
-
+        System.out.println(LocalDate.now());
 
 
         model.addAttribute("allCarts", allCarts);
         System.out.println(allCarts.get(0).getIsPaid());
        // model.addAttribute("sumOfPayments", cartService.getSumOfPayment(listOfPositionsFromUserCart));
         return "adminCheckingPayments";
+    }
+
+   // @RequestMapping(value = "/showCarts", method = RequestMethod.POST)
+   // public String commitPaymentAndUpdateDB(@RequestParam long cartId){
+//
+    //}
+
+    @RequestMapping(value = "/html/commitPayment/{id}", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
+    @ResponseBody
+    public String htmlCartPaidInfo(@PathVariable long id) {
+       Cart userCart = cartDao.getCartById(id);
+        if(userCart.getIsPaid()==true){
+            return "Tak";
+        }
+        cartService.updateDbAfterCommitingPayment(id);
+        return "Tak";
+
     }
 
 

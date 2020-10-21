@@ -10,6 +10,7 @@ public interface ICartDao {
     void addNewCart(Cart cart);
     void deleteCart(Cart cart);
     Cart getUserCart(User user);
+    Cart getCartById(long id);
     List<Cart> getAllCarts();
     void updateCart(Cart cart);
 }

@@ -1,6 +1,7 @@
 package pl.michal.service.impl;
 
 import org.springframework.stereotype.Service;
+import pl.michal.dao.ICartDao;
 import pl.michal.dao.ICartElementDao;
 import pl.michal.dao.IMedicineBatchDAO;
 import pl.michal.model.Cart;
@@ -11,6 +12,7 @@ import pl.michal.service.ICartService;
 import pl.michal.service.IMedicineBatchService;
 
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.util.Collections;
 import java.util.List;
 
@@ -20,11 +22,13 @@ public class CartServiceImpl implements ICartService {
     IMedicineBatchService medicineBatchService;
     IMedicineBatchDAO medicineBatchDAO;
     ICartElementDao cartElementDao;
+    ICartDao cartDao;
 
-    public CartServiceImpl(IMedicineBatchService medicineBatchService, IMedicineBatchDAO medicineBatchDAO, ICartElementDao cartElementDao) {
+    public CartServiceImpl(IMedicineBatchService medicineBatchService, IMedicineBatchDAO medicineBatchDAO, ICartElementDao cartElementDao, ICartDao cartDao) {
         this.medicineBatchService = medicineBatchService;
         this.medicineBatchDAO = medicineBatchDAO;
         this.cartElementDao = cartElementDao;
+        this.cartDao = cartDao;
     }
 
     @Override
@@ -75,6 +79,29 @@ public class CartServiceImpl implements ICartService {
             }
             return 3;
         }
+
+    @Override
+    public void updateDbAfterCommitingPayment(long cartId) {
+        Cart cartNeededToBeUpdatedOnDb = cartDao.getCartById(cartId);
+        List<CartElement> positionsFromCartNeededToBeUpdated = cartElementDao.getAllCartElementsFromUserCart(cartNeededToBeUpdatedOnDb);
+        int quantityFromCart;
+        int quantityFromDb;
+        long medicineBatchId;
+        for(CartElement position : positionsFromCartNeededToBeUpdated){
+            medicineBatchId = position.getMedicineBatch().getId();
+            MedicineBatch actualMedicineBatch = medicineBatchDAO.getMedicineBatchById(medicineBatchId);
+
+            quantityFromCart = position.getQuantity();
+            quantityFromDb = actualMedicineBatch.getQuantity();
+            actualMedicineBatch.setQuantity(quantityFromDb - quantityFromCart);
+
+            medicineBatchDAO.updateMedicineBatch(actualMedicineBatch);
+        }
+        Date date = Date.valueOf(java.time.LocalDate.now());
+        cartNeededToBeUpdatedOnDb.setDateOfPayment(date);
+        cartNeededToBeUpdatedOnDb.setIsPaid(true);
+        cartDao.updateCart(cartNeededToBeUpdatedOnDb);
+    }
 
     public BigDecimal getSumOfPayment(List<CartElement> listOfPositionsFromUserCart){
         BigDecimal totalPrice = new BigDecimal(0);
