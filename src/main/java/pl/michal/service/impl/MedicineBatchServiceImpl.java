@@ -1,11 +1,13 @@
 package pl.michal.service.impl;
 
+import org.apache.tomcat.jni.Local;
 import org.springframework.stereotype.Service;
 import pl.michal.dao.IMedicineBatchDAO;
 import pl.michal.model.MedicineBatch;
 import pl.michal.service.IMedicineBatchService;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
 
@@ -22,11 +24,14 @@ public class MedicineBatchServiceImpl implements IMedicineBatchService {
     public String sellMedicine(String medicineName, int quantityForSell) {
 
         List<MedicineBatch> allMedicineBatchesOfMedicineForSell = medicineBatchDAO.getAllMedicineBatchesOfTheSameMedicineByMedicineName(medicineName);
-
         sortMedicineBatchesListByExpiryDate(allMedicineBatchesOfMedicineForSell);
 
-        int howManyMedicineUnitsOfThatMedicineIsAvailable = this.getHowManyUnitsOfMedicineAvailable(allMedicineBatchesOfMedicineForSell);
+        allMedicineBatchesOfMedicineForSell.removeIf( medicineBatch -> {
+            if(java.sql.Date.valueOf(LocalDate.now()).after(medicineBatch.getExpiryDate())) return true;
+            return false;
+        });
 
+        int howManyMedicineUnitsOfThatMedicineIsAvailable = this.getHowManyUnitsOfMedicineAvailable(allMedicineBatchesOfMedicineForSell);
         if (allMedicineBatchesOfMedicineForSell.isEmpty()) {
             return "1";
         }

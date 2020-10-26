@@ -8,10 +8,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import pl.michal.dao.ICartDao;
 import pl.michal.dao.ICartElementDao;
 import pl.michal.dao.IMedicineBatchDAO;
-import pl.michal.model.Cart;
-import pl.michal.model.CartElement;
-import pl.michal.model.MedicineList;
-import pl.michal.model.User;
+import pl.michal.model.*;
 import pl.michal.service.ICartService;
 import pl.michal.service.IMedicineBatchService;
 
@@ -130,6 +127,7 @@ public class CartController {
     @RequestMapping(value = "/showCarts", method = RequestMethod.GET)
     public String showCartToAdmin(Model model){
         List<Cart> allCarts = cartDao.getAllCarts();
+        allCarts.removeIf(cart -> cart.getIsCommited()==false);
         if(allCarts.isEmpty()){
             model.addAttribute("allCarts", allCarts);
             return "adminCheckingPayments";

@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import pl.michal.dao.IMedicineListDao;
 import pl.michal.model.MedicineList;
 
+
 @Controller
 public class AddMedicineToListController {
 
@@ -32,25 +33,22 @@ public class AddMedicineToListController {
             return ("addMedicineToList");
         } else if (!checkIfMedicineExistInDB(medicineInList)) {
             iMedicineListDao.addMedicinesToList(medicineInList);
-            return "redirect:";
+            return "redirect:/menu";
         }else{
             model.addAttribute("errorMessage", "Lek już istnieje w liście lekarstw, dodaj partię lekarstwa.");
             return ("addMedicineToList");
         }
     }
 
-    @RequestMapping(value = "/changeMedicineListInfo", method = RequestMethod.PUT)
-    public String changeMedicineInfo(@ModelAttribute("medicineInList") MedicineList medicineInList, Model model){
-        try {
-            iMedicineListDao.getMedicineFromList(medicineInList.getMedicineName());
-            System.out.println(medicineInList.toString());
+    @RequestMapping(value = "/changeMedicineListInfo", method = RequestMethod.POST)
+    public String changeMedicineInfo(@ModelAttribute("medicineInList") MedicineList medicineInList, @RequestParam String medName, Model model){
+
+            MedicineList medicineFromDBList = iMedicineListDao.getMedicineFromList(medName);
+            medicineInList.setId(medicineFromDBList.getId());
+
             iMedicineListDao.updateMedicine(medicineInList);
 
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-        return "redirect:/";
+        return "redirect:/menu";
     }
 
     public boolean checkIfMedicineExistInDB(MedicineList medicineInList){

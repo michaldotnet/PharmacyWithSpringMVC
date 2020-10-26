@@ -85,6 +85,7 @@ public class MedicineBatchController {
     @RequestMapping(value = "/infoAboutMedicine", method = RequestMethod.GET)
     public String showInfoAboutMedicine(@ModelAttribute("listOfMedicinesToShowInfoAbout") List<MedicineBatch> medicineBatchList, @ModelAttribute("medicineFromList") MedicineList medicineList) {
         System.out.println(medicineBatchList.toString());
+
         return "medicineInfoV2";
     }
 
@@ -97,7 +98,8 @@ public class MedicineBatchController {
     public String delMedBtach(@RequestParam long medicineBatchId) {
         MedicineBatch medicineBatch = iMedicineBatchDAO.getMedicineBatchById(medicineBatchId);
         iMedicineBatchDAO.deleteMedicineBatch(medicineBatch);
-        return "redirect:/infoAboutMedicine";
+
+        return "redirect:/showInfoAboutMedicine";
     }
 
 

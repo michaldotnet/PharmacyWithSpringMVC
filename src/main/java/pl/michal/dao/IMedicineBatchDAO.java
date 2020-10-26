@@ -12,5 +12,4 @@ public interface IMedicineBatchDAO {
     void updateMedicineBatch(MedicineBatch medicineBatch);
     void deleteMedicineBatch(MedicineBatch medicineBatch);
     void sellMedicine(String medicineName, int quantity);
-
 }

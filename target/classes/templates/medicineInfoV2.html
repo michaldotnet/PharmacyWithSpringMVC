@@ -28,6 +28,7 @@
         <div id="table">
                 <form method="post" action="/changeMedicineListInfo">
                     <div class="button"><input type="text"   class="buttontext" placeholder="Nazwa Leku" name="medicineName" size="20" required></div>
+                    <input type="hidden" name="medName" th:value="${medicineFromList.medicineName}">
                     <div class="button"><input type="text" class="buttontext" placeholder="Producent" name="producer" size="20" required></div>
                     <span class="texts"> <div class="button"> Czy lek  jest na recepte?
                 <input type= "radio" id="tak" name="needPrescription" value="true"

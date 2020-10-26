@@ -13,6 +13,7 @@ import pl.michal.service.IMedicineBatchService;
 
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
 
@@ -37,7 +38,10 @@ public class CartServiceImpl implements ICartService {
         List<MedicineBatch> allMedicineBatchesOfMedicineForSell = medicineBatchDAO.getAllMedicineBatchesOfTheSameMedicineByMedicineName(medicineName);
 
         sortMedicineBatchesListByExpiryDate(allMedicineBatchesOfMedicineForSell);
-        //CartElement cartElement = new CartElement();
+        allMedicineBatchesOfMedicineForSell.removeIf( medicineBatch -> {
+            if(java.sql.Date.valueOf(LocalDate.now()).after(medicineBatch.getExpiryDate())) return true;
+            return false;
+        });
         int howManyMedicineUnitsOfThatMedicineIsAvailable =  medicineBatchService.getHowManyUnitsOfMedicineAvailable(allMedicineBatchesOfMedicineForSell);
         if (allMedicineBatchesOfMedicineForSell.isEmpty()) {
             return 1;

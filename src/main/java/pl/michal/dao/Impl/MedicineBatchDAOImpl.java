@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 import pl.michal.dao.IMedicineBatchDAO;
 import pl.michal.model.MedicineBatch;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Repository
@@ -89,10 +90,10 @@ public class MedicineBatchDAOImpl implements IMedicineBatchDAO {
 
         Query query = session.createQuery(hql.toString());
         List<MedicineBatch> allMedicineBatchesFromDB = query.list();
-
-        //MedicineBatch medicineBatch = (MedicineBatch) session.createQuery("FROM MedicineBatch, MedicineList WHERE medicinename = '" + medicineName + "'").uniqueResult();
-        //List<MedicineList> allMedicinesFromDB = new ArrayList<>();
-       // allMedicinesFromDB = session.createSQLQuery("SELECT * FROM SpisLekarstw").list();
+        allMedicineBatchesFromDB.removeIf( medicineBatch -> {
+            if(java.sql.Date.valueOf(LocalDate.now()).after(medicineBatch.getExpiryDate())) return true;
+            return false;
+        });
 
         session.close();
         return allMedicineBatchesFromDB;
@@ -101,7 +102,5 @@ public class MedicineBatchDAOImpl implements IMedicineBatchDAO {
     @Override
     public void sellMedicine(String medicineName, int quantity) {
         List<MedicineBatch> allMedicineBatchesFromDB =  this.getAllMedicineBatchesOfTheSameMedicineByMedicineName(medicineName);
-
-
     }
 }

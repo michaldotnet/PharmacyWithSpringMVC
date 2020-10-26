@@ -60,11 +60,17 @@ public class SellMedicineControllerV2 {
     }
 
     @RequestMapping(value = "/buyMedicineOnline", method = RequestMethod.GET)
-    public String buyMedicineOnline(Model model){
+    public String buyMedicineOnline(Model model, @SessionAttribute("loggedUser") User loggedUser){
         List<MedicineList> listOfMedicines = iMedicineListDao.getAllMedicinesFromList();
         model.addAttribute("errorMessage", "");
         model.addAttribute("medicineList", listOfMedicines);
         model.addAttribute("medicineFromList", new MedicineList());
+        if(cartDao.getUserCart(loggedUser)!=null && cartDao.getUserCart(loggedUser).getIsCommited()==true){
+            List<CartElement> listOfPositionsFromUserCart = cartElementDao.getAllCartElementsFromUserCart(cartDao.getUserCart(loggedUser));
+            model.addAttribute("sumOfPayments", cartService.getSumOfPayment(listOfPositionsFromUserCart));
+            return ("paymentView");
+        }
+
 
         return "buyMedicineOnline";
     }
@@ -77,6 +83,7 @@ public class SellMedicineControllerV2 {
              System.out.println("User nie ma koszyka, zakładam koszyk");
              Cart userCart = new Cart();
              userCart.setUser(loggedUser);
+             userCart.setIsCommited(false);
              cartForShopping = userCart;
              cartDao.addNewCart(userCart);
          }
