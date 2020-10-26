@@ -2,9 +2,7 @@ package pl.michal.controller.medicineControllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import pl.michal.dao.IMedicineListDao;
 import pl.michal.model.MedicineList;
 
@@ -41,10 +39,18 @@ public class AddMedicineToListController {
         }
     }
 
-    @RequestMapping(value = "/changeMedicineListInfo", method = RequestMethod.POST)
+    @RequestMapping(value = "/changeMedicineListInfo", method = RequestMethod.PUT)
     public String changeMedicineInfo(@ModelAttribute("medicineInList") MedicineList medicineInList, Model model){
-        //iMe
-        return "infoAboutMedicine";
+        try {
+            iMedicineListDao.getMedicineFromList(medicineInList.getMedicineName());
+            System.out.println(medicineInList.toString());
+            iMedicineListDao.updateMedicine(medicineInList);
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return "redirect:/";
     }
 
     public boolean checkIfMedicineExistInDB(MedicineList medicineInList){

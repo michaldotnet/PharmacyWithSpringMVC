@@ -9,7 +9,6 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @Table(name="SpisLekarstw")
 public class MedicineList {

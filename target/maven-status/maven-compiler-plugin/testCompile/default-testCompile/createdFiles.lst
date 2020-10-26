@@ -1,2 +1,2 @@
-pl\michal\configuration\AppConfigurationTest.class
-pl\michal\services\impl\MedicineServiceImplTest.class
+pl/michal/services/impl/MedicineServiceImplTest.class
+pl/michal/configuration/AppConfigurationTest.class

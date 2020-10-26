@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import pl.michal.dao.IMedicineBatchDAO;
 import pl.michal.dao.IMedicineListDao;
@@ -75,6 +76,7 @@ public class MedicineBatchController {
         List<MedicineBatch> listofChoosenMedicineBatches = iMedicineBatchDAO.getAllMedicineBatchesOfTheSameMedicineByMedicineName(medicineList.getMedicineName());
         MedicineList medicineFromList = iMedicineListDao.getMedicineFromList(medicineList.getMedicineName());
 
+
         redirectAttributes.addFlashAttribute("listOfMedicinesToShowInfoAbout", listofChoosenMedicineBatches);
         redirectAttributes.addFlashAttribute("medicineFromList", medicineFromList);
         return "redirect:/infoAboutMedicine";
@@ -89,6 +91,13 @@ public class MedicineBatchController {
     @RequestMapping(value = "/toMenu", method = RequestMethod.POST)
     public String goBackToMenu() {
         return "redirect:/menu";
+    }
+
+    @RequestMapping(value = "/deleteMedicineBatch", method = RequestMethod.POST)
+    public String delMedBtach(@RequestParam long medicineBatchId) {
+        MedicineBatch medicineBatch = iMedicineBatchDAO.getMedicineBatchById(medicineBatchId);
+        iMedicineBatchDAO.deleteMedicineBatch(medicineBatch);
+        return "redirect:/infoAboutMedicine";
     }
 
 
