@@ -40,12 +40,17 @@ public class CartController {
     }
 
     @RequestMapping(value = "/showCart", method = RequestMethod.GET)
-    public String viewUserCart(@SessionAttribute("loggedUser") User loggedUser, Model model) {
+    public String viewUserCart(@SessionAttribute("loggedUser") User loggedUser, Model model, final RedirectAttributes redirectAttributes) {
 
         Cart userCart = cartDao.getUserCart(loggedUser);
         if(userCart==null){
             model.addAttribute("errorMessage", "Twój koszyk jest pusty");
             return ("viewCart");
+        }
+        if(userCart.getIsCommited()!=null && userCart.getIsCommited()==true){
+            List<CartElement> listOfPositionsFromUserCart = cartElementDao.getAllCartElementsFromUserCart(userCart);
+            redirectAttributes.addAttribute("sumOfPayments", cartService.getSumOfPayment(listOfPositionsFromUserCart));
+            return "redirect:/paymentPage";
         }
         List<CartElement> listOfPositionsFromUserCart = cartElementDao.getAllCartElementsFromUserCart(userCart);
         int quantityOfPositionsInCart = listOfPositionsFromUserCart.size();
@@ -53,6 +58,7 @@ public class CartController {
 
 
         model.addAttribute("quantityOfPositionsInCart", quantityOfPositionsInCart);
+        model.addAttribute("userCart", userCart);
         model.addAttribute("totalPrice", totalPrice);
         model.addAttribute("listOfPositionsFromUserCart",listOfPositionsFromUserCart);
         model.addAttribute("errorMessage", "");
@@ -65,6 +71,7 @@ public class CartController {
         Cart userCart = cartDao.getUserCart(loggedUser);
         if(userCart==null){
             model.addAttribute("errorMessage", "Twój koszyk jest pusty");
+            model.addAttribute("userCart", userCart);
             return ("viewCart");
         }
         List<CartElement> listOfPositionsFromUserCart = cartElementDao.getAllCartElementsFromUserCart(userCart);
@@ -89,6 +96,7 @@ public class CartController {
 
                 model.addAttribute("quantityOfPositionsInCart", quantityOfPositionsInCart);
                 model.addAttribute("totalPrice", totalPrice);
+                model.addAttribute("userCart", userCart);
                 model.addAttribute("listOfPositionsFromUserCart",listOfPositionsFromUserCart);
                 model.addAttribute("errorMessage", "Aktualnie posiadamy tylko " + howManyAvailable + " opakowań lekarstwa " + position.getKey());
                 return "viewCart";
@@ -98,10 +106,11 @@ public class CartController {
         userCart.setPrescriptionNumber(prescriptionNumber);
         userCart.setSumOfPayments(cartService.getSumOfPayment(listOfPositionsFromUserCart));
         userCart.setIsPaid(false);
+        userCart.setIsCommited(true);
 
         cartDao.updateCart(userCart);
 
-        redirectAttributes.addAttribute("sumOfPayments", cartService.getSumOfPayment(listOfPositionsFromUserCart));
+        redirectAttributes.addAttribute("sumOfPayments", userCart.getSumOfPayments());
         return ("redirect:/paymentPage");
     }
 
@@ -121,31 +130,89 @@ public class CartController {
     @RequestMapping(value = "/showCarts", method = RequestMethod.GET)
     public String showCartToAdmin(Model model){
         List<Cart> allCarts = cartDao.getAllCarts();
-        System.out.println(LocalDate.now());
-
-
+        if(allCarts.isEmpty()){
+            model.addAttribute("allCarts", allCarts);
+            return "adminCheckingPayments";
+        }
         model.addAttribute("allCarts", allCarts);
-        System.out.println(allCarts.get(0).getIsPaid());
-       // model.addAttribute("sumOfPayments", cartService.getSumOfPayment(listOfPositionsFromUserCart));
+        model.addAttribute("userName",allCarts.get(0).getUser().getName());
+        model.addAttribute("userSurname",allCarts.get(0).getUser().getSurname());
         return "adminCheckingPayments";
     }
 
-   // @RequestMapping(value = "/showCarts", method = RequestMethod.POST)
-   // public String commitPaymentAndUpdateDB(@RequestParam long cartId){
-//
-    //}
+    @RequestMapping(value = "/showCarts", method = RequestMethod.POST)
+    public String commitPaymentAndUpdateDB(@RequestParam long cartId){
+
+    return "adminCheckingPayments";
+    }
+
 
     @RequestMapping(value = "/html/commitPayment/{id}", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
     @ResponseBody
     public String htmlCartPaidInfo(@PathVariable long id) {
        Cart userCart = cartDao.getCartById(id);
+       List<CartElement> cartElementList = userCart.getCartElements();
+       int size = cartElementList.size();
         if(userCart.getIsPaid()==true){
             return "Tak";
         }
         cartService.updateDbAfterCommitingPayment(id);
+        for(int i = 0; i < size ; i++){
+            cartElementDao.deleteElementFromCart(cartElementList.get(i));
+        }
+        cartDao.deleteCart(userCart);
         return "Tak";
 
     }
+
+    @RequestMapping(value = "/html/changeQuantityminus/{cartId}/{positionId}", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
+    @ResponseBody
+    public String chngQuantity(@PathVariable long cartId, @PathVariable long positionId) {
+        Cart userCart = cartDao.getCartById(cartId);
+        List<CartElement> cartElementList = cartElementDao.getAllCartElementsFromUserCart(userCart);
+        CartElement element = cartElementList.stream().filter(cartElement -> cartElement.getId()==positionId).findFirst().get();
+        element.setQuantity(element.getQuantity()-1);
+        String quantity = String.valueOf(element.getQuantity());
+        cartElementDao.updateCartElement(element);
+        return quantity;
+    }
+
+    @RequestMapping(value = "/html/changeQuantityplus/{cartId}/{positionId}", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
+    @ResponseBody
+    public String chngaQuantity(@PathVariable long cartId, @PathVariable long positionId) {
+        Cart userCart = cartDao.getCartById(cartId);
+        List<CartElement> cartElementList = cartElementDao.getAllCartElementsFromUserCart(userCart);
+        CartElement element = cartElementList.stream().filter(cartElement -> cartElement.getId()==positionId).findFirst().get();
+        element.setQuantity(element.getQuantity()+1);
+        String quantity = String.valueOf(element.getQuantity());
+        cartElementDao.updateCartElement(element);
+        return quantity;
+    }
+
+    @RequestMapping(value = "/html/getCartInfo/{cartId}", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
+    @ResponseBody
+    public String showCartInfo(@PathVariable long cartId) {
+        Cart userCart = cartDao.getCartById(cartId);
+        List<CartElement> cartElementList = cartElementDao.getAllCartElementsFromUserCart(userCart);
+        StringBuilder html = new StringBuilder(" <table class = \"medicineInfoTable\">\n" +
+                "            <tr style=\"border: 1px solid white; text-align: center;\">\n" +
+                "                <td style=\"border: 1px solid white\">Pozycja w koszyku</td>\n" +
+                "                <td style=\"border: 1px solid white\">Nazwa Lekarstwa</td>\n" +
+                "                <td style=\"border: 1px solid white\">Cena za opakowanie</td>\n" +
+                "                <td style=\"border: 1px solid white\">Ilość opakowań</td>\n" +
+                "            </tr>");
+            for (CartElement element : cartElementList) {
+                html.append("<tr style=\"'border: 1px solid white'\">\n" +
+                        "                <td style=\"border: 1px solid white\">" + element.getId() +"</td>\n" +
+                        "                <td style=\"border: 1px solid white\" >" + element.getMedicineBatch().getMedicineList().getMedicineName() + "</td>\n" +
+                        "                <td style=\"border: 1px solid white\">" + element.getUnitPrice() + "zł" + "</td>\n" +
+                        "                <td style=\"border: 1px solid white\">"+ element.getQuantity() + "</td>\n" +
+                        "            </tr>");
+            }
+        return html.toString();
+    }
+
+
 
 
 

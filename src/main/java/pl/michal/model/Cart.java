@@ -21,7 +21,7 @@ public class Cart {
     @Column(name="Id", nullable = false)
     private long id;
 
-    @OneToMany(mappedBy = "cart")
+    @OneToMany(mappedBy = "cart", fetch = FetchType.EAGER)
     private List<CartElement> cartElements;
 
     //@JoinColumn(name="IdUzytkownika", nullable = false)
@@ -30,6 +30,9 @@ public class Cart {
 
     @Column(name="CzyZaplacono")
     private Boolean isPaid;
+
+    @Column(name="CzyZatwierdzono")
+    private Boolean isCommited;
 
     @Column(name="DataZaplaty", nullable = true)
     private Date dateOfPayment;

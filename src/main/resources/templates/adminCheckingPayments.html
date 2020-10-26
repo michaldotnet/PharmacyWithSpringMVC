@@ -14,11 +14,24 @@
             var aj = new XMLHttpRequest();
             aj.onreadystatechange = function () {
                 if (aj.readyState == 4 && aj.status == 200){
-                    $('#xd').html(aj.responseText);
+                    $('#xd' + id).html(aj.responseText);
                 }
             };
 
             aj.open("GET", "/html/commitPayment/" + id, true);
+            aj.send();
+        }
+
+        function showCartInfo(cartId) {
+            if(cartId == "") return ;
+            var aj = new XMLHttpRequest();
+            aj.onreadystatechange = function () {
+                if (aj.readyState == 4 && aj.status == 200){
+                    $('#cartInfo').html(aj.responseText);
+                }
+            };
+
+            aj.open("GET", "/html/getCartInfo/" + cartId, true);
             aj.send();
         }
     </script>
@@ -32,29 +45,37 @@
 
     <div class="texts">Koszyki użytkowników:</div>
     <br><br>
+
+    <div style = "">
     <table class = "medicineInfoTable">
         <tr style="border: 1px solid white; text-align: center;">
             <td style="border: 1px solid white">Id Koszyka</td>
+            <td style="border: 1px solid white">Imię</td>
+            <td style="border: 1px solid white">Nazwisko</td>
             <td style="border: 1px solid white">Suma płatności</td>
             <td style="border: 1px solid white">Czy zapłacono</td>
         </tr>
         <th:block   th:each="cart : ${allCarts}">
-                <td th:style="'border: 1px solid white'" th:text="${cart.id}"></td>
+            <tr th:style="'border: 1px solid white'">
+            <td th:style="'border: 1px solid white'" th:text="${cart.id}"></td>
+                <td th:style="'border: 1px solid white'" th:text="${cart.user.name}"></td>
+                 <td th:style="'border: 1px solid white'" th:text="${cart.user.surname}"></td>
                 <td th:style="'border: 1px solid white'" th:text="${cart.sumOfPayments}"></td>
+                <td th:id="'xd' + ${cart.id}" th:style="'border: 1px solid white'" th:if="${cart.isPaid} == true" th:text="Tak"></td>
+                <td th:id="'xd' + ${cart.id}" th:style="'border: 1px solid white'" th:unless="${cart.isPaid} == true" th:text="Nie"></td>
 
-                <td id ="xd" th:style="'border: 1px solid white'" th:if="${cart.isPaid} == true" th:text="Tak"></td>
-                <td id ="xd" th:style="'border: 1px solid white'" th:unless="${cart.isPaid} == true" th:text="Nie"></td>
-
-                <td th:style="'border: 1px solid white'"><input type="submit" value="Zapłacono" onclick="ajax(cartId.value)" class="button-box"/></td>
-                <input type="hidden" name="cartId" id="cartId" th:value="${cart.id}"/>
+                <td th:style="'border: 1px solid white'"><input type="submit" value="Pokaż koszyk" th:onclick="'javascript:showCartInfo(' + ${cart.id} + ');'" class="button-box"/></td>
+                <td th:style="'border: 1px solid white'"><input type="submit" value="Zapłacono" th:onclick="'javascript:ajax(' + ${cart.id} + ');'" class="button-box"/></td>
             </tr>
         </th:block>
     </table>
+    </div>
     <br><br><br><br><br><br>
-    <form method="post">
-        <div><input type="submit" class="button-box" value="Powrót do menu"></div>
-    </form>
 
+    <div id="cartInfo"></div>
+
+
+    <div id="backToMenuV2"><a href="/menu" class="texts" >Powrót do menu</a></div>
 </div>
 </body>
 </html>

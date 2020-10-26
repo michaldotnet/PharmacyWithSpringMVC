@@ -11,4 +11,5 @@ public interface ICartElementDao {
     void addNewElementToCart(CartElement cartElement);
     void deleteElementFromCart(CartElement cartElement);
     List<CartElement> getAllCartElementsFromUserCart(Cart cart);
+    void updateCartElement(CartElement cartElement);
 }

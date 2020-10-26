@@ -20,6 +20,7 @@
     text-align: center;
     width: 70%;
     align-self: center;
+    margin: 0 auto;
 }
 .buttonWithoutHover{
     font-size: 30px;
@@ -61,6 +62,23 @@
     margin: 10px auto;
     width: 200px;
     height: 50px;
+}
+.small-button-box:hover {
+    background-color: #00ae99;
+    color: white;
+}
+.small-button-box {
+    border-radius: 15px;
+    border: 1px solid white;
+    padding: 2px 5px;
+    cursor: pointer;
+    -webkit-transition: 1s; /* Safari prior 6.1 */
+    transition: 1s;
+    display: block;
+    margin: 5px auto;
+    font-size: 17px;
+    width: 40px;
+    height: 23px;
 }
 
 #button-selectOption{

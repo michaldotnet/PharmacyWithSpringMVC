@@ -6,7 +6,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 import pl.michal.dao.IMedicineListDao;
-import pl.michal.model.Medicine;
 import pl.michal.model.MedicineList;
 
 import java.util.ArrayList;
@@ -59,5 +58,22 @@ public class MedicineListDaoImpl implements IMedicineListDao {
         session.close();
 
         return allMedicinesFromDB;
+    }
+
+    @Override
+    public void updateMedicine(MedicineList medicineForUpdate) {
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+
+        try{
+            tx = session.beginTransaction();
+            session.update(medicineForUpdate);
+            tx.commit();
+        } catch(HibernateException e){
+            if(tx != null) tx.rollback();
+        }
+        finally {
+            session.close();
+        }
     }
 }

@@ -70,4 +70,21 @@ public class CartElementDaoImpl implements ICartElementDao {
         session.close();
         return allCartElementsFromCart;
     }
+
+    @Override
+    public void updateCartElement(CartElement cartElement) {
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+
+        try{
+            tx = session.beginTransaction();
+            session.update(cartElement);
+            tx.commit();
+        } catch(HibernateException e){
+            if(tx != null) tx.rollback();
+        }
+        finally {
+            session.close();
+        }
+    }
 }

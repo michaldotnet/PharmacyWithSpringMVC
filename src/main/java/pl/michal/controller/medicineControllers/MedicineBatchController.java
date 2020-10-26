@@ -9,13 +9,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import pl.michal.dao.IMedicineBatchDAO;
 import pl.michal.dao.IMedicineListDao;
-import pl.michal.model.Medicine;
 import pl.michal.model.MedicineBatch;
 import pl.michal.model.MedicineList;
 
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -88,7 +86,7 @@ public class MedicineBatchController {
         return "medicineInfoV2";
     }
 
-    @RequestMapping(value = "/infoAboutMedicine", method = RequestMethod.POST)
+    @RequestMapping(value = "/toMenu", method = RequestMethod.POST)
     public String goBackToMenu() {
         return "redirect:/menu";
     }

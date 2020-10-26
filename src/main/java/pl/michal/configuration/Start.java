@@ -5,8 +5,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import pl.michal.dao.IMedicineBatchDAO;
 import pl.michal.dao.IMedicineListDao;
 import pl.michal.dao.Impl.UserDaoImpl;
-import pl.michal.dao.UserDao;
-import pl.michal.model.Medicine;
 import pl.michal.model.MedicineBatch;
 import pl.michal.model.MedicineList;
 import pl.michal.model.User;
@@ -56,9 +54,6 @@ public class Start {
         medicineBatch.setExpiryDate(new Date(1999, 10, 1));
         medicineBatch.setPrice(new BigDecimal(44.05));
         medicineBatchDAO.addMedicineBatch(medicineBatch);
-
-
-
 
 
 

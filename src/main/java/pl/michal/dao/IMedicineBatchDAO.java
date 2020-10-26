@@ -10,6 +10,7 @@ public interface IMedicineBatchDAO {
     List<MedicineBatch> getAllMedicineBatchesOfTheSameMedicineByMedicineName(String medicineName);
     MedicineBatch getMedicineBatchById(long id);
     void updateMedicineBatch(MedicineBatch medicineBatch);
+    void deleteMedicineBatch(MedicineBatch medicineBatch);
     void sellMedicine(String medicineName, int quantity);
 
 }

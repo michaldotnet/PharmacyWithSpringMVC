@@ -15,15 +15,36 @@
     <br><br><br><br>
 
     <br>
-
-         <div class="texts"  th:text="'Nazwa leku:  '+ ${medicineFromList.medicineName}"></div>
-        <div class="texts"  th:text="'Producent:  '+ ${medicineFromList.producer}"></div>
-        <div class="texts">
-            <span th:text="'Czy lek jest na recepte:'"></span>
-            <span th:if="${medicineFromList.needPrescription} == true" th:text="Tak"></span>
-            <span th:unless="${medicineFromList.needPrescription} == true" th:text="Nie"></span>
+    <div id="medicineListInfo" style="display: flex; justify-content: space-evenly;">
+        <div id="staticInfo" style="display: flex; flex-direction: column ; justify-content: space-evenly;">
+            <div class="texts"  th:text="'Nazwa leku:  '+ ${medicineFromList.medicineName}"></div>
+            <div class="texts"  th:text="'Producent:  '+ ${medicineFromList.producer}"></div>
+            <div class="texts">
+                <span th:text="'Czy lek jest na recepte:'"></span>
+                <span th:if="${medicineFromList.needPrescription} == true" th:text="Tak"></span>
+                <span th:unless="${medicineFromList.needPrescription} == true" th:text="Nie"></span>
+             </div>
         </div>
-        <br><br><br><br>
+        <div id="table">
+                <form method="post" action="/changeMedicineListInfo">
+                    <div class="button"><input type="text"   class="buttontext" placeholder="Nazwa Leku" name="medicineName" size="20" required></div>
+                    <div class="button"><input type="text" class="buttontext" placeholder="Producent" name="producer" size="20" required></div>
+                    <span class="texts"> <div class="button"> Czy lek  jest na recepte?
+                <input type= "radio" id="tak" name="needPrescription" value="true"
+                       checked>
+                <label for="tak">Tak</label>
+
+                <input type="radio" id="nie" name="needPrescription" value="false"
+                       checked>
+                <label for="nie">Nie</label>
+
+            </div>
+            </span>
+                    <div class="button"><input type="submit" class="button-box" value="Zmień informację o lekarstwie"></div>
+                </form>
+            </div>
+    </div>
+        <br><br><br>
         <div class="texts">Wykaz partii lekarstw:</div>
     <br><br>
         <table class = "medicineInfoTable">
@@ -42,10 +63,17 @@
                 </tr>
             </th:block>
         </table>
-    <br><br><br><br><br><br>
-        <form method="post">
-            <div><input type="submit" class="button-box" value="Powrót do menu"></div>
-        </form>
+    <br><br><br><br>
+    <form method="post" action="/deleteMedicineBatch">
+        <div class="texts">Usuń partię lekarstwa</div>
+        <div class="button"><input type="text" class="buttontext" placeholder="ID Partii lekarstw" name="producer" size="20" required></div>
+        <div><input type="submit" class="button-box" value="Usuń"></div>
+    </form>
+    <br><br><br>
+
+    <form method="post" action="/toMenu">
+        <div><input type="submit" class="button-box" value="Powrót do menu"></div>
+    </form>
 
 </div>
 </body>

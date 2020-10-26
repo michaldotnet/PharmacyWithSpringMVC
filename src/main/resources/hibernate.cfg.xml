@@ -20,7 +20,6 @@
         <property name="hibernate.hbm2ddl.auto">create-drop</property>
 
         <!-- mappings -->
-        <mapping class="pl.michal.model.Medicine"/>
         <mapping class="pl.michal.model.User"/>
         <mapping class="pl.michal.model.MedicineBatch"/>
         <mapping class="pl.michal.model.MedicineList"/>

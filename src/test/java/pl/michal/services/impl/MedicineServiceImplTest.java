@@ -10,9 +10,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import pl.michal.configuration.AppConfigurationTest;
-import pl.michal.dao.IMedicineDAO;
-import pl.michal.model.Medicine;
-import pl.michal.service.IMedicineService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +21,7 @@ import static org.mockito.Mockito.*;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {AppConfigurationTest.class})
 public class MedicineServiceImplTest {
-
+/*
     @Autowired
     IMedicineService medicineService;
 
@@ -110,6 +107,8 @@ public class MedicineServiceImplTest {
         listForTest.add(medicine2);
         return  listForTest;
     }
+
+ */
 
 
 

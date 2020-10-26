@@ -5,11 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttribute;
 import pl.michal.dao.IMedicineListDao;
-import pl.michal.model.Medicine;
 import pl.michal.model.MedicineList;
-import pl.michal.model.User;
 
 @Controller
 public class AddMedicineToListController {
@@ -42,6 +39,12 @@ public class AddMedicineToListController {
             model.addAttribute("errorMessage", "Lek już istnieje w liście lekarstw, dodaj partię lekarstwa.");
             return ("addMedicineToList");
         }
+    }
+
+    @RequestMapping(value = "/changeMedicineListInfo", method = RequestMethod.POST)
+    public String changeMedicineInfo(@ModelAttribute("medicineInList") MedicineList medicineInList, Model model){
+        //iMe
+        return "infoAboutMedicine";
     }
 
     public boolean checkIfMedicineExistInDB(MedicineList medicineInList){

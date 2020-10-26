@@ -3,12 +3,8 @@ package pl.michal.dao.Impl;
 import org.hibernate.*;
 import org.springframework.stereotype.Repository;
 import pl.michal.dao.IMedicineBatchDAO;
-import pl.michal.model.Cart;
-import pl.michal.model.Medicine;
 import pl.michal.model.MedicineBatch;
-import pl.michal.model.MedicineList;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -59,6 +55,23 @@ public class MedicineBatchDAOImpl implements IMedicineBatchDAO {
 
         session.close();
         return medicineBatch;
+    }
+
+    @Override
+    public void deleteMedicineBatch(MedicineBatch medicineBatch) {
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+
+        try{
+            tx = session.beginTransaction();
+            session.delete(medicineBatch);
+            tx.commit();
+        } catch(HibernateException e){
+            if(tx != null) tx.rollback();
+        }
+        finally {
+            session.close();
+        }
     }
 
     @Override

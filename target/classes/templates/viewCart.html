@@ -8,8 +8,30 @@
     <link rel="stylesheet" href="flex.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-
+        function ajaxminus(cartId, positionId) {
+            if(cartId == "" || positionId == "") return ;
+            var aj = new XMLHttpRequest();
+            aj.onreadystatechange = function () {
+                if (aj.readyState == 4 && aj.status == 200){
+                    $('#xd' + positionId).html(aj.responseText);
+                }
+            };
+            aj.open("GET", "/html/changeQuantityminus/" + cartId + "/" + positionId, true);
+            aj.send();
+        }
+        function ajaxplus(cartId, positionId) {
+            if(cartId == "" || positionId == "") return ;
+            var aj = new XMLHttpRequest();
+            aj.onreadystatechange = function () {
+                if (aj.readyState == 4 && aj.status == 200){
+                    $('#xd' + positionId).html(aj.responseText);
+                }
+            };
+            aj.open("GET", "/html/changeQuantityplus/" + cartId + "/" + positionId, true);
+            aj.send();
+        }
     </script>
+
 </head>
 
 <body>
@@ -18,19 +40,22 @@
     <br>
     <br>
     <div th:text="${errorMessage}" id="error-message"></div>
+
     <table class = "medicineInfoTable">
             <tr style="border: 1px solid white; text-align: center;">
                 <td style="border: 1px solid white">Pozycja w koszyku</td>
                 <td style="border: 1px solid white">Nazwa Lekarstwa</td>
-                <td style="border: 1px solid white">Ilość opakowań</td>
                 <td style="border: 1px solid white">Cena za opakowanie</td>
+                <td style="border: 1px solid white">Ilość opakowań</td>
             </tr>
             <th:block th:each="cartElement : ${listOfPositionsFromUserCart}">
             <tr th:style="'border: 1px solid white'">
                 <td th:style="'border: 1px solid white'" th:text="${cartElement.id}"></td>
                 <td th:style="'border: 1px solid white'" th:text="${cartElement.medicineBatch.medicineList.medicineName}"></td>
-                <td th:style="'border: 1px solid white'" th:text="${cartElement.quantity}"></td>
-            <td th:style="'border: 1px solid white'" th:text="${cartElement.unitPrice} + 'zł'"></td>
+                <td th:style="'border: 1px solid white'" th:text="${cartElement.unitPrice} + 'zł'"></td>
+                <td th:id="'xd' + ${cartElement.id}" th:style="'border: 1px solid white'" th:text="${cartElement.quantity}"></td>
+                <td><input type="submit" value="-"  th:onclick="'javascript:ajaxminus(' + ${userCart.id} + ',' + ${cartElement.id} +  ');'" class="small-button-box"></td>
+                <td><input type="submit" value="+" th:onclick="'javascript:ajaxplus(' + ${userCart.id} + ',' + ${cartElement.id} +  ');'" class="small-button-box"></td>
             </tr>
             </th:block>
     </table>
