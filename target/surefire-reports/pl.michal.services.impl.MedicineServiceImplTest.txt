@@ -1,4 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: pl.michal.services.impl.MedicineServiceImplTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.271 s - in pl.michal.services.impl.MedicineServiceImplTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.006 s <<< FAILURE! - in pl.michal.services.impl.MedicineServiceImplTest
+initializationError  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.Exception: No runnable methods
+
